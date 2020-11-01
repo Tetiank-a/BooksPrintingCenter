@@ -1,0 +1,15 @@
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\bin\Debug\PRINTER_CENTER.exe.config
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\bin\Debug\PRINTER_CENTER.exe
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\bin\Debug\PRINTER_CENTER.pdb
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.csprojAssemblyReference.cache
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.MainForm.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Properties.Resources.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.csproj.GenerateResource.cache
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.exe
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.pdb
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.MenuForm.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.CustomersForm.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.QueryEdit.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.CustomersEdit.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.OrdersForm.resources
+C:\Users\tatyr\source\repos\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.OrdersEdit.resources
