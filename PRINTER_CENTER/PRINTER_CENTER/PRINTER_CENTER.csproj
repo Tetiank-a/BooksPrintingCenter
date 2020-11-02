@@ -82,6 +82,18 @@
     <Compile Include="OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaperEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaperEdit.Designer.cs">
+      <DependentUpon>PaperEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaperForm.Designer.cs">
+      <DependentUpon>PaperForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaperEdit.resx">
+      <DependentUpon>PaperEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaperForm.resx">
+      <DependentUpon>PaperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
