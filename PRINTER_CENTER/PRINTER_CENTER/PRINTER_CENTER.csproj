@@ -58,6 +58,18 @@
     <Compile Include="CustomersForm.Designer.cs">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InkEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InkEdit.Designer.cs">
+      <DependentUpon>InkEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InkForm.Designer.cs">
+      <DependentUpon>InkForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InkEdit.resx">
+      <DependentUpon>InkEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InkForm.resx">
+      <DependentUpon>InkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

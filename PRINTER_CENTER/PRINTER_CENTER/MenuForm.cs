@@ -40,5 +40,11 @@ namespace PRINTER_CENTER
             var x = new PaperForm();
             x.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var x = new InkForm();
+            x.Show();
+        }
     }
 }

@@ -30,3 +30,5 @@ C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTE
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.exe
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.pdb
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.PaperEdit.resources
+C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.InkEdit.resources
+C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.InkForm.resources
