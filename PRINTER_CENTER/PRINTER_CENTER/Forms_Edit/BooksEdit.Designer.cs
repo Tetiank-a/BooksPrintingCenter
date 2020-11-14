@@ -42,28 +42,33 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.paperBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.inkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.designBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
-            this.paperBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paperTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PaperTableAdapter();
-            this.inkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inkTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.InkTableAdapter();
-            this.designBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.designTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.DesignTableAdapter();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.booksTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.BooksTableAdapter();
+            this.paperTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PaperTableAdapter();
+            this.inkTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.InkTableAdapter();
+            this.designTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.DesignTableAdapter();
             this.ordersTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.OrdersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.paperBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -76,6 +81,7 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -87,6 +93,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox4
             // 
@@ -195,6 +202,16 @@
             this.comboBox2.TabIndex = 24;
             this.comboBox2.ValueMember = "PaperId";
             // 
+            // paperBindingSource
+            // 
+            this.paperBindingSource.DataMember = "Paper";
+            this.paperBindingSource.DataSource = this.printingDataSet;
+            // 
+            // printingDataSet
+            // 
+            this.printingDataSet.DataSetName = "PrintingDataSet";
+            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -217,6 +234,11 @@
             this.comboBox1.Size = new System.Drawing.Size(180, 35);
             this.comboBox1.TabIndex = 26;
             this.comboBox1.ValueMember = "InkId";
+            // 
+            // inkBindingSource
+            // 
+            this.inkBindingSource.DataMember = "Ink";
+            this.inkBindingSource.DataSource = this.printingDataSet;
             // 
             // label7
             // 
@@ -241,6 +263,11 @@
             this.comboBox3.TabIndex = 28;
             this.comboBox3.ValueMember = "DesignId";
             // 
+            // designBindingSource
+            // 
+            this.designBindingSource.DataMember = "Design";
+            this.designBindingSource.DataSource = this.printingDataSet;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -256,11 +283,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(135, 439);
+            this.label9.Location = new System.Drawing.Point(113, 404);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(477, 52);
+            this.label9.Size = new System.Drawing.Size(534, 52);
             this.label9.TabIndex = 29;
-            this.label9.Text = "Create data grid view!!!";
+            this.label9.Text = "1) Create data grid view!!!";
             // 
             // comboBox4
             // 
@@ -274,6 +301,11 @@
             this.comboBox4.TabIndex = 31;
             this.comboBox4.ValueMember = "OrderId";
             // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.printingDataSet;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -285,46 +317,50 @@
             this.label10.TabIndex = 30;
             this.label10.Text = "Order Id";
             // 
-            // printingDataSet
+            // bindingSource1
             // 
-            this.printingDataSet.DataSetName = "PrintingDataSet";
-            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bindingSource1.DataMember = "Books";
+            this.bindingSource1.DataSource = this.printingDataSet;
             // 
-            // paperBindingSource
+            // booksTableAdapter
             // 
-            this.paperBindingSource.DataMember = "Paper";
-            this.paperBindingSource.DataSource = this.printingDataSet;
+            this.booksTableAdapter.ClearBeforeFill = true;
             // 
             // paperTableAdapter
             // 
             this.paperTableAdapter.ClearBeforeFill = true;
             // 
-            // inkBindingSource
-            // 
-            this.inkBindingSource.DataMember = "Ink";
-            this.inkBindingSource.DataSource = this.printingDataSet;
-            // 
             // inkTableAdapter
             // 
             this.inkTableAdapter.ClearBeforeFill = true;
-            // 
-            // designBindingSource
-            // 
-            this.designBindingSource.DataMember = "Design";
-            this.designBindingSource.DataSource = this.printingDataSet;
             // 
             // designTableAdapter
             // 
             this.designTableAdapter.ClearBeforeFill = true;
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.printingDataSet;
-            // 
             // ordersTableAdapter
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(113, 467);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(648, 52);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "2) Do not show used order id!!!";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(113, 530);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(505, 52);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "3) One order = one book";
             // 
             // BooksEdit
             // 
@@ -332,6 +368,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1073, 620);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -356,11 +394,12 @@
             this.Name = "BooksEdit";
             this.Text = "BooksEdit";
             this.Load += new System.EventHandler(this.BooksEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paperBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.designBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,7 +428,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private PrintingDataSet printingDataSet;
+        private PrintingDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
         private System.Windows.Forms.BindingSource paperBindingSource;
         private PrintingDataSetTableAdapters.PaperTableAdapter paperTableAdapter;
         private System.Windows.Forms.BindingSource inkBindingSource;
@@ -398,5 +439,7 @@
         private PrintingDataSetTableAdapters.DesignTableAdapter designTableAdapter;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private PrintingDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

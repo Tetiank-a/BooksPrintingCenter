@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.BooksTableAdapter();
+            this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
             this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,25 +40,28 @@
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfPagesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountOfInkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
+            this.booksTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.BooksTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewBooks
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewBooks.AutoGenerateColumns = false;
+            this.dataGridViewBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewBooks.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookIdDataGridViewTextBoxColumn,
             this.bookNameDataGridViewTextBoxColumn,
             this.authorDataGridViewTextBoxColumn,
@@ -72,27 +72,14 @@
             this.orderIdDataGridViewTextBoxColumn,
             this.numberOfPagesDataGridViewTextBoxColumn,
             this.amountOfInkDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.booksBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1113, 466);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // printingDataSet
-            // 
-            this.printingDataSet.DataSetName = "PrintingDataSet";
-            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.printingDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewBooks.DataSource = this.booksBindingSource;
+            this.dataGridViewBooks.Location = new System.Drawing.Point(9, 34);
+            this.dataGridViewBooks.Name = "dataGridViewBooks";
+            this.dataGridViewBooks.RowHeadersWidth = 51;
+            this.dataGridViewBooks.RowTemplate.Height = 24;
+            this.dataGridViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewBooks.Size = new System.Drawing.Size(1113, 466);
+            this.dataGridViewBooks.TabIndex = 0;
             // 
             // bookIdDataGridViewTextBoxColumn
             // 
@@ -165,6 +152,20 @@
             this.amountOfInkDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.amountOfInkDataGridViewTextBoxColumn.Name = "amountOfInkDataGridViewTextBoxColumn";
             // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.printingDataSet;
+            // 
+            // printingDataSet
+            // 
+            this.printingDataSet.DataSetName = "PrintingDataSet";
+            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -199,18 +200,21 @@
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
             this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // BooksForm
             // 
@@ -219,14 +223,14 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1134, 531);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBooks);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "BooksForm";
             this.Text = "BooksForm";
             this.Load += new System.EventHandler(this.BooksForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +240,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBooks;
         private PrintingDataSet printingDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
         private PrintingDataSetTableAdapters.BooksTableAdapter booksTableAdapter;

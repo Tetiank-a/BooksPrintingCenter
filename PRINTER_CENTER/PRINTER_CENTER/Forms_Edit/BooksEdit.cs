@@ -12,22 +12,77 @@ namespace PRINTER_CENTER.Forms_Edit
 {
     public partial class BooksEdit : Form
     {
+        private readonly int id;
+        readonly bool edit;
         public BooksEdit()
         {
             InitializeComponent();
+            this.booksTableAdapter.Fill(this.printingDataSet.Books);
+            this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
+            this.designTableAdapter.Fill(this.printingDataSet.Design);
+            this.inkTableAdapter.Fill(this.printingDataSet.Ink);
+            this.paperTableAdapter.Fill(this.printingDataSet.Paper);
+            edit = false;
+        }
+
+        public BooksEdit(int BookId, string BookName, string Author,
+            int PaperId, int InkId, int Size, int DesignId, int OrderId,
+            int NumberOfPages, int AmountOfInk) : this()
+        {
+            this.booksTableAdapter.Fill(this.printingDataSet.Books);
+            this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
+            this.designTableAdapter.Fill(this.printingDataSet.Design);
+            this.inkTableAdapter.Fill(this.printingDataSet.Ink);
+            this.paperTableAdapter.Fill(this.printingDataSet.Paper);
+            edit = true;
+            this.id = BookId;
+            textBox1.Text = BookName;
+            textBox2.Text = Author;
+            comboBox2.SelectedValue = PaperId;
+            comboBox1.SelectedValue = InkId;
+            textBox3.Text = Size.ToString();
+            comboBox3.SelectedValue = DesignId;
+            comboBox4.SelectedValue = OrderId;
+            textBox4.Text = NumberOfPages.ToString();
+            textBox5.Text = AmountOfInk.ToString();
         }
 
         private void BooksEdit_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'printingDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
-            // TODO: This line of code loads data into the 'printingDataSet.Design' table. You can move, or remove it, as needed.
-            this.designTableAdapter.Fill(this.printingDataSet.Design);
-            // TODO: This line of code loads data into the 'printingDataSet.Ink' table. You can move, or remove it, as needed.
-            this.inkTableAdapter.Fill(this.printingDataSet.Ink);
-            // TODO: This line of code loads data into the 'printingDataSet.Paper' table. You can move, or remove it, as needed.
-            this.paperTableAdapter.Fill(this.printingDataSet.Paper);
+            this.booksTableAdapter.Fill(this.printingDataSet.Books);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (edit)
+            {
+                booksTableAdapter.UpdateQuery(textBox1.Text, textBox2.Text,
+                    Convert.ToInt32(comboBox2.SelectedValue),
+                    Convert.ToInt32(comboBox1.SelectedValue),
+                    Convert.ToInt32(textBox3.Text),
+                    Convert.ToInt32(comboBox3.SelectedValue),
+                    Convert.ToInt32(comboBox4.SelectedValue),
+                    Convert.ToInt32(textBox4.Text),
+                    Convert.ToInt32(textBox5.Text),
+                    id);
+            }
+            else
+            {
+                booksTableAdapter.Insert(textBox1.Text, textBox2.Text,
+                    Convert.ToInt32(comboBox2.SelectedValue),
+                    Convert.ToInt32(comboBox1.SelectedValue),
+                    Convert.ToInt32(textBox3.Text),
+                    Convert.ToInt32(comboBox3.SelectedValue),
+                    Convert.ToInt32(comboBox4.SelectedValue),
+                    Convert.ToInt32(textBox4.Text),
+                    Convert.ToInt32(textBox5.Text));
+            }
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
