@@ -46,64 +46,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomersEdit.cs">
+    <Compile Include="Forms_Edit\BooksEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersEdit.Designer.cs">
+    <Compile Include="Forms_Edit\BooksEdit.Designer.cs">
+      <DependentUpon>BooksEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Edit\CustomersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Edit\CustomersEdit.Designer.cs">
       <DependentUpon>CustomersEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomersForm.cs">
+    <Compile Include="Forms_Edit\DesignEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersForm.Designer.cs">
+    <Compile Include="Forms_Edit\DesignEdit.Designer.cs">
+      <DependentUpon>DesignEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Form\BooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Form\BooksForm.Designer.cs">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Form\CustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Form\CustomersForm.Designer.cs">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InkEdit.cs">
+    <Compile Include="Forms_Edit\InkEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InkEdit.Designer.cs">
+    <Compile Include="Forms_Edit\InkEdit.Designer.cs">
       <DependentUpon>InkEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="InkForm.cs">
+    <Compile Include="Forms_Form\DesignForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InkForm.Designer.cs">
+    <Compile Include="Forms_Form\DesignForm.Designer.cs">
+      <DependentUpon>DesignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Form\InkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Form\InkForm.Designer.cs">
       <DependentUpon>InkForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms_Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms_Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="Forms_Main\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="Forms_Main\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdersEdit.cs">
+    <Compile Include="Forms_Edit\OrdersEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdersEdit.Designer.cs">
+    <Compile Include="Forms_Edit\OrdersEdit.Designer.cs">
       <DependentUpon>OrdersEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdersForm.cs">
+    <Compile Include="Forms_Form\OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdersForm.Designer.cs">
+    <Compile Include="Forms_Form\OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaperEdit.cs">
+    <Compile Include="Forms_Edit\PaperEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaperEdit.Designer.cs">
+    <Compile Include="Forms_Edit\PaperEdit.Designer.cs">
       <DependentUpon>PaperEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaperForm.cs">
+    <Compile Include="Forms_Form\PaperForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaperForm.Designer.cs">
+    <Compile Include="Forms_Form\PaperForm.Designer.cs">
       <DependentUpon>PaperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PrintingDataSet.Designer.cs">
@@ -113,40 +137,52 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryEdit.cs">
+    <Compile Include="Forms_Query\QueryEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QueryEdit.Designer.cs">
+    <Compile Include="Forms_Query\QueryEdit.Designer.cs">
       <DependentUpon>QueryEdit.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomersEdit.resx">
+    <EmbeddedResource Include="Forms_Edit\BooksEdit.resx">
+      <DependentUpon>BooksEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Edit\CustomersEdit.resx">
       <DependentUpon>CustomersEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomersForm.resx">
+    <EmbeddedResource Include="Forms_Edit\DesignEdit.resx">
+      <DependentUpon>DesignEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Form\BooksForm.resx">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Form\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InkEdit.resx">
+    <EmbeddedResource Include="Forms_Edit\InkEdit.resx">
       <DependentUpon>InkEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InkForm.resx">
+    <EmbeddedResource Include="Forms_Form\DesignForm.resx">
+      <DependentUpon>DesignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Form\InkForm.resx">
       <DependentUpon>InkForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms_Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Forms_Main\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdersEdit.resx">
+    <EmbeddedResource Include="Forms_Edit\OrdersEdit.resx">
       <DependentUpon>OrdersEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdersForm.resx">
+    <EmbeddedResource Include="Forms_Form\OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaperEdit.resx">
+    <EmbeddedResource Include="Forms_Edit\PaperEdit.resx">
       <DependentUpon>PaperEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaperForm.resx">
+    <EmbeddedResource Include="Forms_Form\PaperForm.resx">
       <DependentUpon>PaperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -158,7 +194,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QueryEdit.resx">
+    <EmbeddedResource Include="Forms_Query\QueryEdit.resx">
       <DependentUpon>QueryEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PrintingDataSet.xsc">
