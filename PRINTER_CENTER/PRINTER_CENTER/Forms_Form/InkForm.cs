@@ -63,5 +63,54 @@ namespace PRINTER_CENTER
                 printingDataSet.AcceptChanges();
             }
         }
+        bool CheckIfNumber(string s)
+        {
+            int k1 = 0;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if ((s[i] > '9' || s[i] < '0') && (s[i] != '.'))
+                    return false;
+                if (s[i] == '.')
+                    k1++;
+            }
+            if (k1 > 1)
+                return false;
+            return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (CheckIfNumber(textBox1.Text) == false ||
+                CheckIfNumber(textBox2.Text) == false)
+            {
+                MessageBox.Show("Enter valid price", "Invalid data", MessageBoxButtons.OK);
+            }
+            else
+            {
+                Decimal x1 = Convert.ToDecimal(textBox1.Text);
+                Decimal x2 = Convert.ToDecimal(textBox2.Text);
+                this.inkBindingSource.Filter = String.Format("[Price] >= {0} AND [Price] <= {1}", x1, x2);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.inkBindingSource.Filter = "";
+        }
+
+        private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
+        {
+            this.inkBindingSource.Filter = "CONVERT(InkName, 'System.String') LIKE '%" +
+                toolStripTextBox4.Text + "%'";
+        }
+
+        private void byInkIdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewInk.Sort(dataGridViewInk.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void byPriceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewInk.Sort(dataGridViewInk.Columns[2], ListSortDirection.Ascending);
+        }
     }
 }
