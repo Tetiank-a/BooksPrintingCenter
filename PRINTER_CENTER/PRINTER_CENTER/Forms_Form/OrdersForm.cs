@@ -55,7 +55,8 @@ namespace PRINTER_CENTER
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Do you really want to delete this?", "Delete Data",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!edit) return;
                 ordersTableAdapter.DeleteQuery(
@@ -64,6 +65,42 @@ namespace PRINTER_CENTER
                 ordersTableAdapter.Fill(printingDataSet.Orders);
                 printingDataSet.AcceptChanges();
             }
+        }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.ordersBindingSource.Filter = "CONVERT(OrderId, 'System.String') LIKE '%" +
+                toolStripTextBox4.Text + "%' and CONVERT(CustomerId, 'System.String') LIKE '%" +
+                toolStripTextBox1.Text + "%'";
+        }
+
+        private void byDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewOrders.Sort(dataGridViewOrders.Columns[3], ListSortDirection.Ascending);
+        }
+
+        private void byOrderIdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewOrders.Sort(dataGridViewOrders.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
+        {
+            this.ordersBindingSource.Filter = "CONVERT(OrderId, 'System.String') LIKE '%" +
+                toolStripTextBox4.Text + "%' and CONVERT(CustomerId, 'System.String') LIKE '%" +
+                toolStripTextBox1.Text + "%'";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.ordersBindingSource.Filter = "(OrderDate >= #" +
+                Convert.ToDateTime(dateTimePicker1.Text).ToString("MM/dd/yyyy") +
+                "# and OrderDate <= #" + Convert.ToDateTime(dateTimePicker2.Text).ToString("MM/dd/yyyy") + "#)";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.ordersBindingSource.Filter = "";
         }
     }
 }

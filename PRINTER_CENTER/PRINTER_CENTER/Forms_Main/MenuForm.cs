@@ -65,5 +65,11 @@ namespace PRINTER_CENTER
             var x = new PrintersForm();
             x.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var x = new ProcessLOOK();
+            x.Show();
+        }
     }
 }

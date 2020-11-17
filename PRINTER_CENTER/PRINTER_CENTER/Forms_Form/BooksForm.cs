@@ -71,5 +71,20 @@ namespace PRINTER_CENTER.Forms_Form
                 printingDataSet.AcceptChanges();
             }
         }
+
+        private void byNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewBooks.Sort(dataGridViewBooks.Columns[1], ListSortDirection.Ascending);
+        }
+
+        private void byIdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewBooks.Sort(dataGridViewBooks.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.booksBindingSource.Filter = "CONVERT(BookName, 'System.String') LIKE '" + toolStripTextBox1.Text + "%'";
+        }
     }
 }

@@ -106,6 +106,12 @@
     <Compile Include="Forms_Form\PrintersForm.Designer.cs">
       <DependentUpon>PrintersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Form\ProcessLOOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Form\ProcessLOOK.Designer.cs">
+      <DependentUpon>ProcessLOOK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Form\PrintersForm.resx">
       <DependentUpon>PrintersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Form\ProcessLOOK.resx">
+      <DependentUpon>ProcessLOOK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
