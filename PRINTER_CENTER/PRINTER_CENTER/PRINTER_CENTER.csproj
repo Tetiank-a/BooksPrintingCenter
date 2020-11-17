@@ -64,6 +64,12 @@
     <Compile Include="Forms_Edit\DesignEdit.Designer.cs">
       <DependentUpon>DesignEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Edit\PrintersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Edit\PrintersEdit.Designer.cs">
+      <DependentUpon>PrintersEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Form\BooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="Forms_Form\InkForm.Designer.cs">
       <DependentUpon>InkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Form\PrintersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Form\PrintersForm.Designer.cs">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_Main\MainForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="Forms_Edit\DesignEdit.resx">
       <DependentUpon>DesignEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Edit\PrintersEdit.resx">
+      <DependentUpon>PrintersEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_Form\BooksForm.resx">
       <DependentUpon>BooksForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Form\InkForm.resx">
       <DependentUpon>InkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Form\PrintersForm.resx">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

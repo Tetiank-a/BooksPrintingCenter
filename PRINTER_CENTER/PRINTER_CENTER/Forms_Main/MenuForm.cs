@@ -59,5 +59,11 @@ namespace PRINTER_CENTER
             var x = new BooksForm();
             x.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var x = new PrintersForm();
+            x.Show();
+        }
     }
 }

@@ -44,7 +44,6 @@ namespace PRINTER_CENTER
             //this.customersTableAdapter.Fill(this.printingDataSet.Customers);
             // TODO: This line of code loads data into the 'printingDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
