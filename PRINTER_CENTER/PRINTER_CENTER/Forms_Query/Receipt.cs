@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PRINTER_CENTER.Forms_Query
+{
+    public partial class Receipt : Form
+    {
+        const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
+
+        public Receipt()
+        {
+            InitializeComponent();
+        }
+        public Receipt(int OrderId) : this()
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select c1.c_name, c1.c_surname, o1.orderdate, b1.bookname," +
+                "o1.circulation, p1.price * b1.numberofpages as 'Paper price for 1 book', " +
+                "i1.price * b1.amountofink as 'Ink price for 1 book', d1.price as 'Design price', " +
+                "p1.price * b1.numberofpages + i1.price * b1.amountofink + d1.price as 'Sum for 1 book', " +
+                "p1.price * b1.numberofpages * o1.circulation + i1.price * b1.amountofink * o1.circulation + " +
+                "d1.price as 'Result Sum' from customers c1 inner join orders o1 on o1.customerid = " +
+                "c1.customerid inner join books b1 on b1.orderid = o1.orderid inner join paper p1 on " +
+                "p1.paperid = b1.paperid inner join ink i1 on i1.inkid = b1.inkid inner join design d1 on " +
+                "d1.designid = b1.designid where o1.OrderId = {0}", OrderId);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void Receipt_Load(object sender, EventArgs e)
+        {
+        }
+    }
+}

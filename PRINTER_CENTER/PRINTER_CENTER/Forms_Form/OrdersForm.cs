@@ -1,7 +1,9 @@
-﻿using System;
+﻿using PRINTER_CENTER.Forms_Query;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -101,6 +103,12 @@ namespace PRINTER_CENTER
         private void button2_Click(object sender, EventArgs e)
         {
             this.ordersBindingSource.Filter = "";
+        }
+
+        private void orederReceiptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var edt = new Receipt(Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value));
+            edt.ShowDialog();
         }
     }
 }

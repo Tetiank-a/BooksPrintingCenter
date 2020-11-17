@@ -39,3 +39,4 @@ C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTE
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Form.PrintersForm.resources
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Edit.PrintersEdit.resources
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Form.ProcessLOOK.resources
+C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Query.Receipt.resources
