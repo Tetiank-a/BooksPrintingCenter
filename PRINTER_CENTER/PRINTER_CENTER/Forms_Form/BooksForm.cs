@@ -82,9 +82,10 @@ namespace PRINTER_CENTER.Forms_Form
             dataGridViewBooks.Sort(dataGridViewBooks.Columns[0], ListSortDirection.Ascending);
         }
 
-        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+
+        private void toolStripTextBox2_TextChanged(object sender, EventArgs e)
         {
-            this.booksBindingSource.Filter = "CONVERT(BookName, 'System.String') LIKE '" + toolStripTextBox1.Text + "%'";
+            this.booksBindingSource.Filter = "CONVERT(BookName, 'System.String') LIKE '" + toolStripTextBox2.Text + "%'";
         }
     }
 }

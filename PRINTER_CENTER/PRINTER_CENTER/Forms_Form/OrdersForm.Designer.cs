@@ -247,7 +247,7 @@
             this.bindingNavigator3.MovePreviousItem = null;
             this.bindingNavigator3.Name = "bindingNavigator3";
             this.bindingNavigator3.PositionItem = null;
-            this.bindingNavigator3.Size = new System.Drawing.Size(274, 27);
+            this.bindingNavigator3.Size = new System.Drawing.Size(274, 31);
             this.bindingNavigator3.TabIndex = 5;
             this.bindingNavigator3.Text = "bindingNavigator3";
             // 
