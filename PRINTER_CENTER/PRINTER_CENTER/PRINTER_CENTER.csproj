@@ -148,6 +148,12 @@
     <Compile Include="Forms_Form\PaperForm.Designer.cs">
       <DependentUpon>PaperForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Query\AskData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Query\AskData.Designer.cs">
+      <DependentUpon>AskData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Query\Process.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Form\PaperForm.resx">
       <DependentUpon>PaperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Query\AskData.resx">
+      <DependentUpon>AskData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Query\Process.resx">
       <DependentUpon>Process.cs</DependentUpon>

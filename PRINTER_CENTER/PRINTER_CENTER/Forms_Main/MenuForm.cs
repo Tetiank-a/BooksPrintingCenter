@@ -1,4 +1,5 @@
 ﻿using PRINTER_CENTER.Forms_Form;
+using PRINTER_CENTER.Forms_Query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,12 @@ namespace PRINTER_CENTER
         private void button7_Click(object sender, EventArgs e)
         {
             var x = new ProcessLOOK();
+            x.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var x = new AskData();
             x.Show();
         }
     }
