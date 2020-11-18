@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace PRINTER_CENTER.Forms_Query
 {
     public partial class Receipt : Form
     {
+        string Receiptx;
         const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
 
         public Receipt()
@@ -36,11 +38,54 @@ namespace PRINTER_CENTER.Forms_Query
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;
+            string x1 = (dataGridView1.Rows[0].Cells[0].Value).ToString();
+            string x2 = (dataGridView1.Rows[0].Cells[1].Value).ToString();
+
+            string x3 = (dataGridView1.Rows[0].Cells[2].Value).ToString();
+            string x4 = (dataGridView1.Rows[0].Cells[3].Value).ToString();
+            string x5 = (dataGridView1.Rows[0].Cells[4].Value).ToString();
+            string x6 = (dataGridView1.Rows[0].Cells[5].Value).ToString();
+            string x7 = (dataGridView1.Rows[0].Cells[6].Value).ToString();
+            string x8 = (dataGridView1.Rows[0].Cells[7].Value).ToString();
+
+            string x9 = (dataGridView1.Rows[0].Cells[8].Value).ToString();
+            string x10 = (dataGridView1.Rows[0].Cells[9].Value).ToString();
+
+            Receiptx =
+                "Name:                          " + x1 + "\n" +
+                "Surname:                       " + x2 + "\n" + 
+                "Order date:                    " + x3 + "\n" +
+                "Book name:                     " + x4 + "\n" + 
+                "Circulation:                   " + x5 + "\n" +
+                "Paper price for 1 book:        " + x6 + "\n" +
+                "Ink price for 1 book:          " + x7 + "\n" +
+                "Design price:                  " + x8 + "\n" +
+                "Sum for 1 book:                " + x9 + "\n" +
+                "Result Sum:                    " + x10 + "\n";
+            label1.Text = Receiptx;
             sqlconn.Close();
         }
 
         private void Receipt_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+
+                System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName.ToString());
+                file.WriteLine(Receiptx);
+                file.Close();
+            }
         }
     }
 }
