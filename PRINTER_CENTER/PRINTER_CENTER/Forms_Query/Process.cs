@@ -26,7 +26,9 @@ namespace PRINTER_CENTER.Forms_Query
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             string s = String.Format("select process.bookid," +
-                "process.quantity, process.timeneeded from process where process.printerid = {0}", PrinterId);
+                "process.quantity, process.timeneeded from process inner join " +
+                "books on books.bookid = process.bookid inner join orders on " +
+                "orders.orderid = books.orderid where process.printerid = {0} order by orders.orderdate asc", PrinterId);
             SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
             DataTable dt = new DataTable();
             oda.Fill(dt);
