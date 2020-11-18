@@ -64,6 +64,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.findPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -158,17 +159,18 @@
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.sortToolStripMenuItem,
-            this.orederReceiptToolStripMenuItem});
+            this.orederReceiptToolStripMenuItem,
+            this.findPrinterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1117, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1117, 32);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 28);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // editToolStripMenuItem
@@ -178,7 +180,7 @@
             this.editToolStripMenuItem1,
             this.deleteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(59, 28);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
@@ -208,7 +210,7 @@
             this.byDateToolStripMenuItem,
             this.byOrderIdToolStripMenuItem});
             this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
-            this.sortToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(59, 28);
             this.sortToolStripMenuItem.Text = "Sort";
             // 
             // byDateToolStripMenuItem
@@ -228,7 +230,7 @@
             // orederReceiptToolStripMenuItem
             // 
             this.orederReceiptToolStripMenuItem.Name = "orederReceiptToolStripMenuItem";
-            this.orederReceiptToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.orederReceiptToolStripMenuItem.Size = new System.Drawing.Size(149, 28);
             this.orederReceiptToolStripMenuItem.Text = "Oreder receipt";
             this.orederReceiptToolStripMenuItem.Click += new System.EventHandler(this.orederReceiptToolStripMenuItem_Click);
             // 
@@ -256,27 +258,27 @@
             this.bindingNavigator3.MovePreviousItem = null;
             this.bindingNavigator3.Name = "bindingNavigator3";
             this.bindingNavigator3.PositionItem = null;
-            this.bindingNavigator3.Size = new System.Drawing.Size(274, 31);
+            this.bindingNavigator3.Size = new System.Drawing.Size(274, 27);
             this.bindingNavigator3.TabIndex = 5;
             this.bindingNavigator3.Text = "bindingNavigator3";
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(153, 28);
+            this.toolStripLabel4.Size = new System.Drawing.Size(153, 24);
             this.toolStripLabel4.Text = "FIND ORDER   ";
             // 
             // toolStripTextBox4
             // 
             this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 31);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox4.TextChanged += new System.EventHandler(this.toolStripTextBox4_TextChanged);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // dateTimePicker1
             // 
@@ -350,20 +352,20 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(153, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(153, 24);
             this.toolStripLabel1.Text = "FIND CUSTOMER";
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 31);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigator1
             // 
@@ -385,7 +387,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(274, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(274, 27);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -399,6 +401,16 @@
             this.label4.Size = new System.Drawing.Size(150, 33);
             this.label4.TabIndex = 13;
             this.label4.Text = "SEARCHING";
+            // 
+            // findPrinterToolStripMenuItem
+            // 
+            this.findPrinterToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.findPrinterToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findPrinterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.findPrinterToolStripMenuItem.Name = "findPrinterToolStripMenuItem";
+            this.findPrinterToolStripMenuItem.Size = new System.Drawing.Size(103, 28);
+            this.findPrinterToolStripMenuItem.Text = "Find printer";
+            this.findPrinterToolStripMenuItem.Click += new System.EventHandler(this.findPrinterToolStripMenuItem_Click);
             // 
             // OrdersForm
             // 
@@ -476,5 +488,6 @@
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem orederReceiptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findPrinterToolStripMenuItem;
     }
 }

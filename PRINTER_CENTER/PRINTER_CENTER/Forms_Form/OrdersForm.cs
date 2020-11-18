@@ -1,4 +1,5 @@
-﻿using PRINTER_CENTER.Forms_Query;
+﻿using PRINTER_CENTER.Forms_Main;
+using PRINTER_CENTER.Forms_Query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,6 +109,12 @@ namespace PRINTER_CENTER
         private void orederReceiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var edt = new Receipt(Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value));
+            edt.ShowDialog();
+        }
+
+        private void findPrinterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var edt = new Auto(Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value));
             edt.ShowDialog();
         }
     }
