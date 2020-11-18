@@ -23,5 +23,18 @@ namespace PRINTER_CENTER.Forms_Form
             this.processTableAdapter.Fill(this.printingDataSet.Process);
 
         }
+
+
+        private void dELETEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                processTableAdapter.DeleteQuery(
+                Convert.ToInt32(dataGridViewProcess.SelectedRows[0].Cells[0].Value)
+                );
+                processTableAdapter.Fill(printingDataSet.Process);
+                printingDataSet.AcceptChanges();
+            }
+        }
     }
 }

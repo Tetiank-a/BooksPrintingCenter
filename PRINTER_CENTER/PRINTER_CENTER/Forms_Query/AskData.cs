@@ -53,8 +53,8 @@ namespace PRINTER_CENTER.Forms_Query
         {
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
-            string s = String.Format("select process.bookid, books.bookname, process.printerid, " +
-                "books.paperid, paper.papername, books.inkid, ink.inkname " +
+            string s = String.Format("select process.printerid as 'PRINTER ID', process.bookid as 'BOOK ID', books.bookname as 'BOOK NAME', " +
+                "books.paperid as 'PAPER ID', paper.papername as 'PAPER NAME', books.inkid as 'INK ID', ink.inkname as 'INK NAME' " +
                 "from process inner join books on books.bookid = process.bookid inner join " +
                 "paper on paper.paperid = books.paperid inner join ink on ink.inkid = books.inkid " +
                 "inner join orders on orders.orderid = books.orderid order by orders.orderdate asc;");
