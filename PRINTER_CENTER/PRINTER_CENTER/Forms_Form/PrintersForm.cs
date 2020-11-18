@@ -1,4 +1,5 @@
 ﻿using PRINTER_CENTER.Forms_Edit;
+using PRINTER_CENTER.Forms_Query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,12 @@ namespace PRINTER_CENTER.Forms_Form
                 printingMachinesTableAdapter.Fill(printingDataSet.PrintingMachines);
                 printingDataSet.AcceptChanges();
             }
+        }
+
+        private void getProcessesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var edt = new Process(Convert.ToInt32(dataGridViewPrinters.SelectedRows[0].Cells[0].Value));
+            edt.ShowDialog();
         }
     }
 }

@@ -43,6 +43,7 @@
             this.printingMachinesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.printingMachinesTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PrintingMachinesTableAdapter();
+            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrinters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingMachinesBindingSource)).BeginInit();
@@ -54,7 +55,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.getProcessesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
@@ -81,21 +83,21 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -167,6 +169,13 @@
             // 
             this.printingMachinesTableAdapter.ClearBeforeFill = true;
             // 
+            // getProcessesToolStripMenuItem
+            // 
+            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
+            this.getProcessesToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.getProcessesToolStripMenuItem.Text = "Get processes";
+            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
+            // 
             // PrintersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -206,5 +215,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paperSizeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn speedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn conditionDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
     }
 }

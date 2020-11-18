@@ -80,8 +80,6 @@ namespace PRINTER_CENTER.Forms_Query
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-
-
                 System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName.ToString());
                 file.WriteLine(Receiptx);
                 file.Close();
