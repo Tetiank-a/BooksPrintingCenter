@@ -14,43 +14,59 @@ namespace PRINTER_CENTER.Forms_Main
     public partial class Auto : Form
     {
         string Receiptx;
+        bool check = false;
         int bookidx, circulationx, orderidx, booksizex;
         string papersizex;
         const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            for (int i = 0; i < circulationx; ++i)
+            if (check == true)
             {
-                string s = String.Format("select count(printings.printerid) from printings where printings.papersize = '{0}'", papersizex);
-                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-                DataTable dt = new DataTable();
-                oda.Fill(dt);
-                int x = Convert.ToInt32(dt.Rows[0][0]);
-                if (x == 0)
-                {
-                    MessageBox.Show("No appropriate printers", "Invalid data", MessageBoxButtons.OK);
-                    break;
-                }
-                s = String.Format("select * from printings where printings.papersize = '{0}' " +
-                "order by printings.[common time] + printings.speed * {1}", papersizex, booksizex);
-                oda = new SqlDataAdapter(s, sqlconn);
-                dt = new DataTable();
-                oda.Fill(dt);
-                int newprinter = Convert.ToInt32(dt.Rows[0][0]);
-                int newspeed = Convert.ToInt32(dt.Rows[0][2]);
-
-                s = String.Format("insert into process([PrinterId], [BookId], [Quantity], " +
-                    "[TimeNeeded]) values({0}, {1}, {2}, {3})", newprinter, bookidx, 1,
-                    newspeed * booksizex);
-                oda = new SqlDataAdapter(s, sqlconn);
-                dt = new DataTable();
-                oda.Fill(dt);
+                MessageBox.Show("Has already been added", "Error", MessageBoxButtons.OK);
             }
-            sqlconn.Close();
-            MessageBox.Show("Your order has been added to the process", "Information", MessageBoxButtons.OK);
+            else
+            {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                for (int i = 0; i < circulationx; ++i)
+                {
+                    string s = String.Format("select count(printings.printerid) from printings where printings.papersize = '{0}'", papersizex);
+                    SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                    DataTable dt = new DataTable();
+                    oda.Fill(dt);
+                    int x = Convert.ToInt32(dt.Rows[0][0]);
+                    if (x == 0)
+                    {
+                        MessageBox.Show("No appropriate printers", "Invalid data", MessageBoxButtons.OK);
+                        break;
+                    }
+                    s = String.Format("select * from printings where printings.papersize = '{0}' " +
+                    "order by printings.[common time] + printings.speed * {1}", papersizex, booksizex);
+                    oda = new SqlDataAdapter(s, sqlconn);
+                    dt = new DataTable();
+                    oda.Fill(dt);
+                    int newprinter = Convert.ToInt32(dt.Rows[0][0]);
+                    int newspeed = Convert.ToInt32(dt.Rows[0][2]);
+
+                    s = String.Format("insert into process([PrinterId], [BookId], [Quantity], " +
+                        "[TimeNeeded]) values({0}, {1}, {2}, {3})", newprinter, bookidx, 1,
+                        newspeed * booksizex);
+                    oda = new SqlDataAdapter(s, sqlconn);
+                    dt = new DataTable();
+                    oda.Fill(dt);
+                }
+                sqlconn.Close();
+                MessageBox.Show("Your order has been added to the process", "Information", MessageBoxButtons.OK);
+                sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string s1 = String.Format("update orders set orders.Condition = 1 where orders.OrderId = {0}", orderidx);
+                SqlDataAdapter oda1 = new SqlDataAdapter(s1, sqlconn);
+                DataTable dt1 = new DataTable();
+                oda1.Fill(dt1);
+                sqlconn.Close();
+                check = true;
+            }
         }
 
         public Auto()
