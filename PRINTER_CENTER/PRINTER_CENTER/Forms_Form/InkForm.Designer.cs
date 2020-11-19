@@ -41,6 +41,9 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byInkIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inkTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.InkTableAdapter();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -54,9 +57,6 @@
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byInkIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -151,23 +151,46 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // sortToolStripMenuItem
+            // 
+            this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.byInkIdToolStripMenuItem,
+            this.byPriceToolStripMenuItem});
+            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.sortToolStripMenuItem.Text = "Sort";
+            // 
+            // byInkIdToolStripMenuItem
+            // 
+            this.byInkIdToolStripMenuItem.Name = "byInkIdToolStripMenuItem";
+            this.byInkIdToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.byInkIdToolStripMenuItem.Text = "By ink id";
+            this.byInkIdToolStripMenuItem.Click += new System.EventHandler(this.byInkIdToolStripMenuItem_Click);
+            // 
+            // byPriceToolStripMenuItem
+            // 
+            this.byPriceToolStripMenuItem.Name = "byPriceToolStripMenuItem";
+            this.byPriceToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.byPriceToolStripMenuItem.Text = "By price";
+            this.byPriceToolStripMenuItem.Click += new System.EventHandler(this.byPriceToolStripMenuItem_Click);
             // 
             // inkTableAdapter
             // 
@@ -285,36 +308,13 @@
             // 
             this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 31);
             this.toolStripTextBox4.TextChanged += new System.EventHandler(this.toolStripTextBox4_TextChanged);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // sortToolStripMenuItem
-            // 
-            this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.byInkIdToolStripMenuItem,
-            this.byPriceToolStripMenuItem});
-            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
-            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.sortToolStripMenuItem.Text = "Sort";
-            // 
-            // byPriceToolStripMenuItem
-            // 
-            this.byPriceToolStripMenuItem.Name = "byPriceToolStripMenuItem";
-            this.byPriceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.byPriceToolStripMenuItem.Text = "By price";
-            this.byPriceToolStripMenuItem.Click += new System.EventHandler(this.byPriceToolStripMenuItem_Click);
-            // 
-            // byInkIdToolStripMenuItem
-            // 
-            this.byInkIdToolStripMenuItem.Name = "byInkIdToolStripMenuItem";
-            this.byInkIdToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.byInkIdToolStripMenuItem.Text = "By ink id";
-            this.byInkIdToolStripMenuItem.Click += new System.EventHandler(this.byInkIdToolStripMenuItem_Click);
             // 
             // InkForm
             // 
