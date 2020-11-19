@@ -17,6 +17,7 @@ namespace PRINTER_CENTER
     {
         const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
         private bool edit = true;
+        //1
         public OrdersForm()
         {
             InitializeComponent();
@@ -169,8 +170,26 @@ namespace PRINTER_CENTER
 
         private void findPrinterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var edt = new Auto(Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value));
-            edt.ShowDialog();
+            int orderidx = Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value);
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select count(books.bookid) from " +
+                "orders left join books on orders.orderid = books.orderid " +
+                "group by orders.orderid having orders.OrderId = {0}",
+                    orderidx);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+            {
+                MessageBox.Show("Add an information about book firstly", "Impossible " +
+                       "operation", MessageBoxButtons.OK);
+            }
+            else
+            {
+                var edt = new Auto(Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value));
+                edt.ShowDialog();
+            }
         }
     }
 }

@@ -172,6 +172,9 @@
     <Compile Include="Forms_Query\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintingDataSet.cs">
+      <DependentUpon>PrintingDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PrintingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

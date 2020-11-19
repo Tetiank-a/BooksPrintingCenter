@@ -73,9 +73,9 @@ namespace PRINTER_CENTER
             {
                 SqlConnection sqlconn = new SqlConnection(ConnectionString);
                 sqlconn.Open();
-                string s = String.Format("select CASE WHEN sum(books.bookid) is not NULL THEN " +
-                    "sum(books.bookid) Else 0 END from books " +
-                    "inner join ink on ink.inkid = books.inkid where ink.inkid = {0}", 
+                string s = String.Format("select count(books.bookid) from ink left " +
+                    "join books on books.inkId = ink.inkid group by ink.inkid " +
+                    "having ink.inkid = {0}",
                     dataGridViewInk.SelectedRows[0].Cells[0].Value);
                 SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
                 DataTable dt = new DataTable();

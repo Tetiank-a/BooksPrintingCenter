@@ -18,7 +18,7 @@ namespace PRINTER_CENTER.Forms_Edit
         {
             InitializeComponent();
             this.booksTableAdapter.Fill(this.printingDataSet.Books);
-            this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
+            this.ordersTableAdapter.FillBy1(this.printingDataSet.Orders);
             this.designTableAdapter.Fill(this.printingDataSet.Design);
             this.inkTableAdapter.Fill(this.printingDataSet.Ink);
             this.paperTableAdapter.Fill(this.printingDataSet.Paper);
@@ -30,7 +30,7 @@ namespace PRINTER_CENTER.Forms_Edit
             int NumberOfPages, int AmountOfInk) : this()
         {
             this.booksTableAdapter.Fill(this.printingDataSet.Books);
-            this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
+            this.ordersTableAdapter.FillBy1(this.printingDataSet.Orders);
             this.designTableAdapter.Fill(this.printingDataSet.Design);
             this.inkTableAdapter.Fill(this.printingDataSet.Ink);
             this.paperTableAdapter.Fill(this.printingDataSet.Paper);
@@ -84,5 +84,7 @@ namespace PRINTER_CENTER.Forms_Edit
         {
             Close();
         }
+
+
     }
 }
