@@ -19,31 +19,31 @@ namespace PRINTER_CENTER
         {
             InitializeComponent();
             dataGridViewInk.DataSource = inkBindingSource;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            toolStripTextBox4.Text = "";
+            Ziro();
         }
 
         private void InkForm_Load(object sender, EventArgs e)
         {
             dataGridViewInk.DataSource = inkBindingSource;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            toolStripTextBox4.Text = "";
+            Ziro();
             // TODO: This line of code loads data into the 'printingDataSet.Ink' table. You can move, or remove it, as needed.
             this.inkTableAdapter.Fill(this.printingDataSet.Ink);
 
         }
 
+        private void Ziro()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            toolStripTextBox4.Text = "";
+        }
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!edit) return;
             var edt = new InkEdit();
             edt.ShowDialog();
             dataGridViewInk.DataSource = inkBindingSource;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            toolStripTextBox4.Text = "";
+            Ziro();
             inkTableAdapter.Fill(printingDataSet.Ink);
             printingDataSet.AcceptChanges();
         }
@@ -62,9 +62,7 @@ namespace PRINTER_CENTER
             );
             edt.ShowDialog();
             dataGridViewInk.DataSource = inkBindingSource;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            toolStripTextBox4.Text = "";
+            Ziro();
             inkTableAdapter.Fill(printingDataSet.Ink);
             printingDataSet.AcceptChanges();
         }
@@ -87,15 +85,12 @@ namespace PRINTER_CENTER
                 sqlconn.Close();
                 if (Convert.ToInt32(dt.Rows[0][0]) == 0)
                 {
-
                     if (!edit) return;
                     inkTableAdapter.DeleteQuery(
                     Convert.ToInt32(dataGridViewInk.SelectedRows[0].Cells[0].Value)
                     );
                     dataGridViewInk.DataSource = inkBindingSource;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    toolStripTextBox4.Text = "";
+                    Ziro();
                     inkTableAdapter.Fill(printingDataSet.Ink);
                     printingDataSet.AcceptChanges();
                 }
@@ -131,21 +126,22 @@ namespace PRINTER_CENTER
             }
             else
             {
-            Decimal x1 = Convert.ToDecimal(textBox1.Text);
-            Decimal x2 = Convert.ToDecimal(textBox2.Text);
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            string s = String.Format("select * from ink where ink.price >= {0} and ink.price <= {1}", x1, x2);
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewInk.DataSource = dt;
-            sqlconn.Close();
+                Decimal x1 = Convert.ToDecimal(textBox1.Text);
+                Decimal x2 = Convert.ToDecimal(textBox2.Text);
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string s = String.Format("select * from ink where ink.price >= {0} and ink.price <= {1}", x1, x2);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridViewInk.DataSource = dt;
+                sqlconn.Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Ziro();
             dataGridViewInk.DataSource = inkBindingSource;
             this.inkTableAdapter.Fill(this.printingDataSet.Ink);
         }
@@ -167,6 +163,7 @@ namespace PRINTER_CENTER
 
         private void byInkIdToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Ziro();
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             string s = String.Format("select * from ink order by ink.inkid");
@@ -180,6 +177,7 @@ namespace PRINTER_CENTER
 
         private void byPriceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Ziro();
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             string s = String.Format("select * from ink order by ink.price");

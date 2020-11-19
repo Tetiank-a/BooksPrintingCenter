@@ -15,14 +15,18 @@ namespace PRINTER_CENTER
 {
     public partial class OrdersForm : Form
     {
+        const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
         private bool edit = true;
         public OrdersForm()
         {
             InitializeComponent();
+            Ziro();
         }
 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
+            dataGridViewOrders.DataSource = ordersBindingSource;
+            Ziro();
             // TODO: This line of code loads data into the 'printingDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
 
@@ -33,6 +37,8 @@ namespace PRINTER_CENTER
             if (!edit) return;
             var edt = new OrdersEdit();
             edt.ShowDialog();
+            dataGridViewOrders.DataSource = ordersBindingSource;
+            Ziro();
             ordersTableAdapter.Fill(printingDataSet.Orders);
             printingDataSet.AcceptChanges();
         }
@@ -52,10 +58,17 @@ namespace PRINTER_CENTER
             Convert.ToBoolean(row[4])
             );
             edt.ShowDialog();
+            dataGridViewOrders.DataSource = ordersBindingSource;
+            Ziro();
             ordersTableAdapter.Fill(printingDataSet.Orders);
             printingDataSet.AcceptChanges();
         }
 
+        private void Ziro()
+        {
+            toolStripTextBox4.Text = "";
+            toolStripTextBox1.Text = "";
+        }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you really want to delete this?", "Delete Data",
@@ -65,6 +78,8 @@ namespace PRINTER_CENTER
                 ordersTableAdapter.DeleteQuery(
                 Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value)
                 );
+                dataGridViewOrders.DataSource = ordersBindingSource;
+                Ziro();
                 ordersTableAdapter.Fill(printingDataSet.Orders);
                 printingDataSet.AcceptChanges();
             }
@@ -72,38 +87,78 @@ namespace PRINTER_CENTER
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.ordersBindingSource.Filter = "CONVERT(OrderId, 'System.String') LIKE '%" +
-                toolStripTextBox4.Text + "%' and CONVERT(CustomerId, 'System.String') LIKE '%" +
-                toolStripTextBox1.Text + "%'";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string x = toolStripTextBox1.Text;
+            string y = toolStripTextBox4.Text;
+            string s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%'", x, y);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewOrders.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void byDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewOrders.Sort(dataGridViewOrders.Columns[3], ListSortDirection.Ascending);
+            Ziro();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from orders order by orders.orderdate");
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewOrders.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void byOrderIdToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewOrders.Sort(dataGridViewOrders.Columns[0], ListSortDirection.Ascending);
+            Ziro();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from orders order by orders.orderid");
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewOrders.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
         {
-            this.ordersBindingSource.Filter = "CONVERT(OrderId, 'System.String') LIKE '%" +
-                toolStripTextBox4.Text + "%' and CONVERT(CustomerId, 'System.String') LIKE '%" +
-                toolStripTextBox1.Text + "%'";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string x = toolStripTextBox1.Text;
+            string y = toolStripTextBox4.Text;
+            string s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%'", x, y);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewOrders.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.ordersBindingSource.Filter = "(OrderDate >= #" +
-                Convert.ToDateTime(dateTimePicker1.Text).ToString("MM/dd/yyyy") +
-                "# and OrderDate <= #" + Convert.ToDateTime(dateTimePicker2.Text).ToString("MM/dd/yyyy") + "#)";
+            Ziro();
+            DateTime x1 = Convert.ToDateTime(dateTimePicker1.Value);
+            DateTime x2 = Convert.ToDateTime(dateTimePicker2.Value);
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from orders where orders.orderdate >= '{0}' and orders.orderdate <= '{1}'", x1, x2);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewOrders.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.ordersBindingSource.Filter = "";
+            Ziro();
+            dataGridViewOrders.DataSource = ordersBindingSource;
+            ordersTableAdapter.Fill(printingDataSet.Orders);
         }
 
         private void orederReceiptToolStripMenuItem_Click(object sender, EventArgs e)

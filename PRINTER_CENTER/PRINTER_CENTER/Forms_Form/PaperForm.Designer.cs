@@ -42,6 +42,10 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byPaperIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bySizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paperTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PaperTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,10 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byPaperIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bySizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paperBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -185,6 +185,37 @@
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
+            // sortToolStripMenuItem
+            // 
+            this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.byPaperIdToolStripMenuItem,
+            this.bySizeToolStripMenuItem,
+            this.byPriceToolStripMenuItem});
+            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.sortToolStripMenuItem.Text = "Sort";
+            // 
+            // byPaperIdToolStripMenuItem
+            // 
+            this.byPaperIdToolStripMenuItem.Name = "byPaperIdToolStripMenuItem";
+            this.byPaperIdToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.byPaperIdToolStripMenuItem.Text = "By paper id";
+            this.byPaperIdToolStripMenuItem.Click += new System.EventHandler(this.byPaperIdToolStripMenuItem_Click);
+            // 
+            // bySizeToolStripMenuItem
+            // 
+            this.bySizeToolStripMenuItem.Name = "bySizeToolStripMenuItem";
+            this.bySizeToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.bySizeToolStripMenuItem.Text = "By size";
+            this.bySizeToolStripMenuItem.Click += new System.EventHandler(this.bySizeToolStripMenuItem_Click);
+            // 
+            // byPriceToolStripMenuItem
+            // 
+            this.byPriceToolStripMenuItem.Name = "byPriceToolStripMenuItem";
+            this.byPriceToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.byPriceToolStripMenuItem.Text = "By price";
+            this.byPriceToolStripMenuItem.Click += new System.EventHandler(this.byPriceToolStripMenuItem_Click);
+            // 
             // paperTableAdapter
             // 
             this.paperTableAdapter.ClearBeforeFill = true;
@@ -260,14 +291,14 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(54, 26);
+            this.toolStripLabel4.Size = new System.Drawing.Size(54, 24);
             this.toolStripLabel4.Text = "Name";
             // 
             // toolStripTextBox4
             // 
             this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox4.TextChanged += new System.EventHandler(this.toolStripTextBox4_TextChanged);
             // 
             // toolStripSeparator1
@@ -295,7 +326,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(175, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(214, 29);
             this.bindingNavigator1.TabIndex = 14;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -309,13 +340,13 @@
             // 
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // label1
             // 
@@ -350,37 +381,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(193, 34);
             this.textBox2.TabIndex = 23;
-            // 
-            // sortToolStripMenuItem
-            // 
-            this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.byPaperIdToolStripMenuItem,
-            this.bySizeToolStripMenuItem,
-            this.byPriceToolStripMenuItem});
-            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
-            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.sortToolStripMenuItem.Text = "Sort";
-            // 
-            // byPaperIdToolStripMenuItem
-            // 
-            this.byPaperIdToolStripMenuItem.Name = "byPaperIdToolStripMenuItem";
-            this.byPaperIdToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.byPaperIdToolStripMenuItem.Text = "By paper id";
-            this.byPaperIdToolStripMenuItem.Click += new System.EventHandler(this.byPaperIdToolStripMenuItem_Click);
-            // 
-            // bySizeToolStripMenuItem
-            // 
-            this.bySizeToolStripMenuItem.Name = "bySizeToolStripMenuItem";
-            this.bySizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bySizeToolStripMenuItem.Text = "By size";
-            this.bySizeToolStripMenuItem.Click += new System.EventHandler(this.bySizeToolStripMenuItem_Click);
-            // 
-            // byPriceToolStripMenuItem
-            // 
-            this.byPriceToolStripMenuItem.Name = "byPriceToolStripMenuItem";
-            this.byPriceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.byPriceToolStripMenuItem.Text = "By price";
-            this.byPriceToolStripMenuItem.Click += new System.EventHandler(this.byPriceToolStripMenuItem_Click);
             // 
             // PaperForm
             // 

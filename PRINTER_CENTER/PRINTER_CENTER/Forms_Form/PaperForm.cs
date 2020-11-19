@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,27 @@ namespace PRINTER_CENTER
 {
     public partial class PaperForm : Form
     {
+        const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
         private bool edit = true;
         public PaperForm()
         {
             InitializeComponent();
+            dataGridViewPaper.DataSource = paperBindingSource;
+            Ziro();
+        }
+
+        private void Ziro()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            toolStripTextBox4.Text = "";
+            toolStripTextBox1.Text = "";
         }
 
         private void PaperForm_Load(object sender, EventArgs e)
         {
+            dataGridViewPaper.DataSource = paperBindingSource;
+            Ziro();
             // TODO: This line of code loads data into the 'printingDataSet.Paper' table. You can move, or remove it, as needed.
             this.paperTableAdapter.Fill(this.printingDataSet.Paper);
 
@@ -30,6 +44,8 @@ namespace PRINTER_CENTER
             if (!edit) return;
             var edt = new PaperEdit();
             edt.ShowDialog();
+            dataGridViewPaper.DataSource = paperBindingSource;
+            Ziro();
             paperTableAdapter.Fill(printingDataSet.Paper);
             printingDataSet.AcceptChanges();
         }
@@ -48,6 +64,8 @@ namespace PRINTER_CENTER
             Convert.ToDecimal(row[3])
             );
             edt.ShowDialog();
+            dataGridViewPaper.DataSource = paperBindingSource;
+            Ziro();
             paperTableAdapter.Fill(printingDataSet.Paper);
             printingDataSet.AcceptChanges();
         }
@@ -56,31 +74,69 @@ namespace PRINTER_CENTER
         {
             if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (!edit) return;
-                paperTableAdapter.DeleteQuery(
-                Convert.ToInt32(dataGridViewPaper.SelectedRows[0].Cells[0].Value)
-                );
-                paperTableAdapter.Fill(printingDataSet.Paper);
-                printingDataSet.AcceptChanges();
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string s = String.Format("select CASE WHEN sum(books.bookid) is not NULL THEN " +
+                    "sum(books.bookid) Else 0 END from books " +
+                    "inner join paper on paper.paperid = books.paperid where paper.paperid = {0}",
+                    dataGridViewPaper.SelectedRows[0].Cells[0].Value);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                //dataGridViewInk.DataSource = dt;
+
+                sqlconn.Close();
+                if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+                {
+                    if (!edit) return;
+                    paperTableAdapter.DeleteQuery(
+                    Convert.ToInt32(dataGridViewPaper.SelectedRows[0].Cells[0].Value)
+                    );
+                    dataGridViewPaper.DataSource = paperBindingSource;
+                    Ziro();
+                    paperTableAdapter.Fill(printingDataSet.Paper);
+                    printingDataSet.AcceptChanges();
+                }
+                else
+                {
+                    MessageBox.Show("This paper is used in books, change the value " +
+                        "of paper type in all books to delete this item", "Impossible " +
+                        "operation", MessageBoxButtons.OK);
+                }
             }
         }
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.paperBindingSource.Filter = "CONVERT(Size, 'System.String') LIKE '%" +
-                toolStripTextBox1.Text + "%' and CONVERT(PaperName, 'System.String') LIKE '%" +
-                toolStripTextBox4.Text + "%'";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string x = toolStripTextBox1.Text;
+            string y = toolStripTextBox4.Text;
+            string s = String.Format("select * from paper where paper.size like '%{0}%' and paper.papername like '%{1}%'", x, y);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewPaper.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
         {
-            this.paperBindingSource.Filter = "CONVERT(Size, 'System.String') LIKE '%" +
-                toolStripTextBox1.Text + "%' and CONVERT(PaperName, 'System.String') LIKE '%" +
-                toolStripTextBox4.Text + "%'";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string x = toolStripTextBox1.Text;
+            string y = toolStripTextBox4.Text;
+            string s = String.Format("select * from paper where paper.size like '%{0}%' and paper.papername like '%{1}%'", x, y);
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewPaper.DataSource = dt;
+            sqlconn.Close();
         }
 
         bool CheckIfNumber(string s)
         {
+            if (s == "") return false;
             int k1 = 0;
             for (int i = 0; i < s.Length; ++i)
             {
@@ -104,28 +160,61 @@ namespace PRINTER_CENTER
             {
                 Decimal x1 = Convert.ToDecimal(textBox1.Text);
                 Decimal x2 = Convert.ToDecimal(textBox2.Text);
-                this.paperBindingSource.Filter = String.Format("[Price] >= {0} AND [Price] <= {1}", x1, x2);
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string s = String.Format("select * from paper where paper.price >= {0} and paper.price <= {1}", x1, x2);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridViewPaper.DataSource = dt;
+                sqlconn.Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.paperBindingSource.Filter = "";
+            Ziro();
+            dataGridViewPaper.DataSource = paperBindingSource;
+            this.paperTableAdapter.Fill(this.printingDataSet.Paper);
         }
 
         private void byPaperIdToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewPaper.Sort(dataGridViewPaper.Columns[0], ListSortDirection.Ascending);
+            Ziro();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from paper order by paper.paperid");
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewPaper.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void bySizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewPaper.Sort(dataGridViewPaper.Columns[2], ListSortDirection.Ascending);
+            Ziro();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from paper order by paper.size");
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewPaper.DataSource = dt;
+            sqlconn.Close();
         }
 
         private void byPriceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridViewPaper.Sort(dataGridViewPaper.Columns[3], ListSortDirection.Ascending);
+            Ziro();
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            string s = String.Format("select * from paper order by paper.price");
+            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridViewPaper.DataSource = dt;
+            sqlconn.Close();
         }
     }
 }

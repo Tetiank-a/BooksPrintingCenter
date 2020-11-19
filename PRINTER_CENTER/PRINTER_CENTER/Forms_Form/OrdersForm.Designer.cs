@@ -47,6 +47,7 @@
             this.byDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byOrderIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orederReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.OrdersTableAdapter();
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
@@ -64,7 +65,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.findPrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -234,6 +234,16 @@
             this.orederReceiptToolStripMenuItem.Text = "Oreder receipt";
             this.orederReceiptToolStripMenuItem.Click += new System.EventHandler(this.orederReceiptToolStripMenuItem_Click);
             // 
+            // findPrinterToolStripMenuItem
+            // 
+            this.findPrinterToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.findPrinterToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findPrinterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.findPrinterToolStripMenuItem.Name = "findPrinterToolStripMenuItem";
+            this.findPrinterToolStripMenuItem.Size = new System.Drawing.Size(103, 28);
+            this.findPrinterToolStripMenuItem.Text = "Find printer";
+            this.findPrinterToolStripMenuItem.Click += new System.EventHandler(this.findPrinterToolStripMenuItem_Click);
+            // 
             // ordersTableAdapter
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
@@ -402,16 +412,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "SEARCHING";
             // 
-            // findPrinterToolStripMenuItem
-            // 
-            this.findPrinterToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.findPrinterToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findPrinterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.findPrinterToolStripMenuItem.Name = "findPrinterToolStripMenuItem";
-            this.findPrinterToolStripMenuItem.Size = new System.Drawing.Size(103, 28);
-            this.findPrinterToolStripMenuItem.Text = "Find printer";
-            this.findPrinterToolStripMenuItem.Click += new System.EventHandler(this.findPrinterToolStripMenuItem_Click);
-            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
@@ -475,7 +475,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
@@ -489,5 +488,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem orederReceiptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findPrinterToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
