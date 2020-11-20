@@ -23,7 +23,6 @@ namespace PRINTER_CENTER.Forms_Form
         {
             // TODO: This line of code loads data into the 'printingDataSet.Books' table. You can move, or remove it, as needed.
             this.booksTableAdapter.Fill(this.printingDataSet.Books);
-
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

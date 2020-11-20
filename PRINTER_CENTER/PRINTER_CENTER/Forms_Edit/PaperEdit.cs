@@ -31,18 +31,39 @@ namespace PRINTER_CENTER
             this.edit = true;
             this.id = PaperId;
         }
-
+        bool CheckIfNumber(string s)
+        {
+            if (s == "") return false;
+            int k1 = 0;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if ((s[i] > '9' || s[i] < '0') && (s[i] != '.'))
+                    return false;
+                if (s[i] == '.')
+                    k1++;
+            }
+            if (k1 > 1)
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (edit)
+            if (CheckIfNumber(textBox3.Text) == false)
             {
-                paperTableAdapter.UpdateQuery(textBox1.Text, textBox2.Text, Convert.ToDecimal(textBox3.Text), id);
+                MessageBox.Show("Enter valid numbers", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                paperTableAdapter.Insert(textBox1.Text, textBox2.Text, Convert.ToDecimal(textBox3.Text));
+                if (edit)
+                {
+                    paperTableAdapter.UpdateQuery(textBox1.Text, textBox2.Text, Convert.ToDecimal(textBox3.Text), id);
+                }
+                else
+                {
+                    paperTableAdapter.Insert(textBox1.Text, textBox2.Text, Convert.ToDecimal(textBox3.Text));
+                }
+                Close();
             }
-            Close();
         }
 
         private void PaperEdit_Load(object sender, EventArgs e)
