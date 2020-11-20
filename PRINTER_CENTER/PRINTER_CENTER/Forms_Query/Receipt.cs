@@ -23,6 +23,7 @@ namespace PRINTER_CENTER.Forms_Query
         }
         public Receipt(int OrderId) : this()
         {
+
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             string s = String.Format("select c1.c_name, c1.c_surname, o1.orderdate, b1.bookname," +
@@ -50,18 +51,19 @@ namespace PRINTER_CENTER.Forms_Query
 
             string x9 = (dataGridView1.Rows[0].Cells[8].Value).ToString();
             string x10 = (dataGridView1.Rows[0].Cells[9].Value).ToString();
-
+            DateTime dateTime = DateTime.UtcNow.Date;
             Receiptx =
                 "Name:                          " + x1 + "\n" +
-                "Surname:                       " + x2 + "\n" + 
+                "Surname:                       " + x2 + "\n" +
                 "Order date:                    " + x3 + "\n" +
-                "Book name:                     " + x4 + "\n" + 
+                "Book name:                     " + x4 + "\n" +
                 "Circulation:                   " + x5 + "\n" +
                 "Paper price for 1 book:        " + x6 + "\n" +
                 "Ink price for 1 book:          " + x7 + "\n" +
                 "Design price:                  " + x8 + "\n" +
                 "Sum for 1 book:                " + x9 + "\n" +
-                "Result Sum:                    " + x10 + "\n";
+                "Result Sum:                    " + x10 + "\n" +
+                dateTime.ToString("dd/MM/yyyy");
             label1.Text = Receiptx;
             sqlconn.Close();
         }
@@ -72,6 +74,7 @@ namespace PRINTER_CENTER.Forms_Query
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -84,6 +87,7 @@ namespace PRINTER_CENTER.Forms_Query
                 file.WriteLine(Receiptx);
                 file.Close();
             }
+
         }
     }
 }
