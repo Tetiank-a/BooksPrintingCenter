@@ -45,23 +45,36 @@ namespace PRINTER_CENTER
                 return false;
             return true;
         }
+        bool Check_valid(string s)
+        {
+            if (s == "")
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (CheckIfNumber(textBox3.Text) == false)
+            if (Check_valid(textBox1.Text) == false || Check_valid(textBox3.Text) == false)
             {
-                MessageBox.Show("Enter valid numbers", "Invalid data", MessageBoxButtons.OK);
+                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                if (edit)
+                if (CheckIfNumber(textBox3.Text) == false)
                 {
-                    inkTableAdapter.UpdateQuery(textBox1.Text, Convert.ToDecimal(textBox3.Text), id);
+                    MessageBox.Show("Enter valid numbers", "Invalid data", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    inkTableAdapter.Insert(textBox1.Text, Convert.ToDecimal(textBox3.Text));
+                    if (edit)
+                    {
+                        inkTableAdapter.UpdateQuery(textBox1.Text, Convert.ToDecimal(textBox3.Text), id);
+                    }
+                    else
+                    {
+                        inkTableAdapter.Insert(textBox1.Text, Convert.ToDecimal(textBox3.Text));
+                    }
+                    Close();
                 }
-                Close();
             }
         }
 

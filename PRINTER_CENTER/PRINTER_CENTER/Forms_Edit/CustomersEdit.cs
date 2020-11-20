@@ -37,18 +37,31 @@ namespace PRINTER_CENTER
             this.customersTableAdapter.Fill(this.printingDataSet.Customers);
 
         }
-
+        bool Check_valid(string s)
+        {
+            if (s == "")
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (edit)
+            if (Check_valid(textBox1.Text) == false || Check_valid(textBox2.Text) == false ||
+                Check_valid(textBox3.Text) == false || Check_valid(textBox4.Text) == false)
             {
-                customersTableAdapter.UpdateQuery(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, id);
+                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                customersTableAdapter.Insert(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                if (edit)
+                {
+                    customersTableAdapter.UpdateQuery(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, id);
+                }
+                else
+                {
+                    customersTableAdapter.Insert(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                }
+                Close();
             }
-            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

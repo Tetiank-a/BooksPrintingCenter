@@ -35,18 +35,30 @@ namespace PRINTER_CENTER.Forms_Edit
         {
             this.designTableAdapter.Fill(this.printingDataSet.Design);
         }
-
+        bool Check_valid(string s)
+        {
+            if (s == "")
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (edit)
+            if (Check_valid(textBox1.Text) == false || Check_valid(textBox3.Text) == false)
             {
-                designTableAdapter.UpdateQuery(textBox1.Text, Convert.ToDecimal(textBox3.Text), id);
+                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                designTableAdapter.Insert(textBox1.Text, Convert.ToDecimal(textBox3.Text));
+                if (edit)
+                {
+                    designTableAdapter.UpdateQuery(textBox1.Text, Convert.ToDecimal(textBox3.Text), id);
+                }
+                else
+                {
+                    designTableAdapter.Insert(textBox1.Text, Convert.ToDecimal(textBox3.Text));
+                }
+                Close();
             }
-            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

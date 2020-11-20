@@ -7806,8 +7806,9 @@ SELECT OrderId, CustomerId, Circulation, OrderDate, Condition FROM Orders WHERE 
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT OrderId, CustomerId, Circulation, OrderDate, Condition FROM dbo.Orders whe" +
                 "re OrderId not in (select o1.orderid from orders o1 inner join books on books.or" +
-                "derid = o1.orderid)";
+                "derid = o1.orderid) or OrderId = @Original_OrderId";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "UPDATE [dbo].[Orders] SET [CustomerId] = @CustomerId, [Circulation] = @Circulatio" +
@@ -7875,8 +7876,9 @@ SELECT OrderId, CustomerId, Circulation, OrderDate, Condition FROM Orders WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(PrintingDataSet.OrdersDataTable dataTable) {
+        public virtual int FillBy1(PrintingDataSet.OrdersDataTable dataTable, int Original_OrderId) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Original_OrderId));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7888,8 +7890,9 @@ SELECT OrderId, CustomerId, Circulation, OrderDate, Condition FROM Orders WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PrintingDataSet.OrdersDataTable GetDataBy3() {
+        public virtual PrintingDataSet.OrdersDataTable GetDataBy3(int Original_OrderId) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Original_OrderId));
             PrintingDataSet.OrdersDataTable dataTable = new PrintingDataSet.OrdersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

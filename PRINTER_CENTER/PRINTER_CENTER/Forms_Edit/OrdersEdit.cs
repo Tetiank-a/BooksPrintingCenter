@@ -45,21 +45,33 @@ namespace PRINTER_CENTER
             // TODO: This line of code loads data into the 'printingDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this.printingDataSet.Orders);
         }
-
+        bool Check_valid(string s)
+        {
+            if (s == "")
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            bool x = false;
-            if (comboBox1.Text == "Yes")
-                x = true;
-            if (edit)
+            if (Check_valid(textBox2.Text) == false)
             {
-                ordersTableAdapter.UpdateQuery(Convert.ToInt32(comboBox2.Text), Convert.ToInt32(textBox2.Text), dateTimePicker1.Text, x, id);
+                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                ordersTableAdapter.Insert(Convert.ToInt32(comboBox2.Text), Convert.ToInt32(textBox2.Text), Convert.ToDateTime(dateTimePicker1.Text), x);
+                bool x = false;
+                if (comboBox1.Text == "Yes")
+                    x = true;
+                if (edit)
+                {
+                    ordersTableAdapter.UpdateQuery(Convert.ToInt32(comboBox2.Text), Convert.ToInt32(textBox2.Text), dateTimePicker1.Text, x, id);
+                }
+                else
+                {
+                    ordersTableAdapter.Insert(Convert.ToInt32(comboBox2.Text), Convert.ToInt32(textBox2.Text), Convert.ToDateTime(dateTimePicker1.Text), x);
+                }
+                Close();
             }
-            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

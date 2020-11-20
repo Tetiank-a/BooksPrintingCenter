@@ -32,21 +32,48 @@ namespace PRINTER_CENTER.Forms_Edit
                 x = "Ready";
             comboBox1.Text = x;
         }
-
+        bool Check_valid(string s)
+        {
+            if (s == "")
+                return false;
+            return true;
+        }
+        bool CheckIfNumber(string s)
+        {
+            if (s == "") return false;
+            int k1 = 0;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if ((s[i] > '9' || s[i] < '0') && (s[i] != '.'))
+                    return false;
+                if (s[i] == '.')
+                    k1++;
+            }
+            if (k1 > 1)
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            bool x = false;
-            if (comboBox1.Text == "Ready")
-                x = true;
-            if (edit)
+            if (Check_valid(textBox2.Text) == false || Check_valid(textBox1.Text) == false || CheckIfNumber(textBox1.Text) == false)
             {
-                printingMachinesTableAdapter.UpdateQuery(textBox2.Text, Convert.ToInt32(textBox1.Text), x, id);
+                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
-                printingMachinesTableAdapter.Insert(textBox2.Text, Convert.ToInt32(textBox1.Text), x);
+                bool x = false;
+                if (comboBox1.Text == "Ready")
+                    x = true;
+                if (edit)
+                {
+                    printingMachinesTableAdapter.UpdateQuery(textBox2.Text, Convert.ToInt32(textBox1.Text), x, id);
+                }
+                else
+                {
+                    printingMachinesTableAdapter.Insert(textBox2.Text, Convert.ToInt32(textBox1.Text), x);
+                }
+                Close();
             }
-            Close();
         }
 
         private void PrintersEdit_Load(object sender, EventArgs e)
