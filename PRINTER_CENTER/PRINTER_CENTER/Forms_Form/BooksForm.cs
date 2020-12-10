@@ -86,5 +86,17 @@ namespace PRINTER_CENTER.Forms_Form
         {
             this.booksBindingSource.Filter = "CONVERT(BookName, 'System.String') LIKE '" + toolStripTextBox2.Text + "%'";
         }
+
+        private void BooksForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

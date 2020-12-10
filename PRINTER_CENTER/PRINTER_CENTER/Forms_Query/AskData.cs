@@ -104,5 +104,17 @@ namespace PRINTER_CENTER.Forms_Query
                 return false;
             return true;
         }
+
+        private void AskData_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

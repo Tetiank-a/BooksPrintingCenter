@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
             this.SuspendLayout();
@@ -98,12 +99,25 @@
             this.printingDataSet.DataSetName = "PrintingDataSet";
             this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Lime;
+            this.button5.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(388, 603);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(195, 48);
+            this.button5.TabIndex = 27;
+            this.button5.Text = "BACK <--";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // QueryEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(985, 629);
+            this.ClientSize = new System.Drawing.Size(985, 675);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -111,6 +125,7 @@
             this.Controls.Add(this.TestInput);
             this.Name = "QueryEdit";
             this.Text = "QueryEdit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QueryEdit_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -125,5 +140,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private PrintingDataSet printingDataSet;
+        private System.Windows.Forms.Button button5;
     }
 }

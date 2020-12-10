@@ -64,5 +64,17 @@ namespace PRINTER_CENTER.Forms_Form
                 printingDataSet.AcceptChanges();
             }
         }
+
+        private void DesignForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

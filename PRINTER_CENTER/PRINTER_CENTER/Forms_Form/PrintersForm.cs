@@ -72,5 +72,17 @@ namespace PRINTER_CENTER.Forms_Form
             var edt = new Process(Convert.ToInt32(dataGridViewPrinters.SelectedRows[0].Cells[0].Value));
             edt.ShowDialog();
         }
+
+        private void PrintersForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

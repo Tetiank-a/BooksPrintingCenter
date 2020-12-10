@@ -48,5 +48,16 @@ namespace PRINTER_CENTER
             Close();
         }
 
+        private void QueryEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

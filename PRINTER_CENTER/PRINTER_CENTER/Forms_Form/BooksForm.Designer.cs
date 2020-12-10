@@ -57,6 +57,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -83,12 +84,12 @@
             this.numberOfPagesDataGridViewTextBoxColumn,
             this.amountOfInkDataGridViewTextBoxColumn});
             this.dataGridViewBooks.DataSource = this.booksBindingSource;
-            this.dataGridViewBooks.Location = new System.Drawing.Point(25, 145);
+            this.dataGridViewBooks.Location = new System.Drawing.Point(25, 133);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.RowHeadersWidth = 51;
             this.dataGridViewBooks.RowTemplate.Height = 24;
             this.dataGridViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBooks.Size = new System.Drawing.Size(1173, 493);
+            this.dataGridViewBooks.Size = new System.Drawing.Size(1173, 378);
             this.dataGridViewBooks.TabIndex = 0;
             // 
             // bookIdDataGridViewTextBoxColumn
@@ -239,14 +240,14 @@
             // byNameToolStripMenuItem
             // 
             this.byNameToolStripMenuItem.Name = "byNameToolStripMenuItem";
-            this.byNameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.byNameToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.byNameToolStripMenuItem.Text = "By name";
             this.byNameToolStripMenuItem.Click += new System.EventHandler(this.byNameToolStripMenuItem_Click);
             // 
             // byIdToolStripMenuItem
             // 
             this.byIdToolStripMenuItem.Name = "byIdToolStripMenuItem";
-            this.byIdToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.byIdToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.byIdToolStripMenuItem.Text = "By id";
             this.byIdToolStripMenuItem.Click += new System.EventHandler(this.byIdToolStripMenuItem_Click);
             // 
@@ -274,7 +275,7 @@
             this.toolStripLabel2,
             this.toolStripTextBox2,
             this.toolStripSeparator4});
-            this.bindingNavigator2.Location = new System.Drawing.Point(101, 86);
+            this.bindingNavigator2.Location = new System.Drawing.Point(25, 93);
             this.bindingNavigator2.MoveFirstItem = null;
             this.bindingNavigator2.MoveLastItem = null;
             this.bindingNavigator2.MoveNextItem = null;
@@ -293,7 +294,6 @@
             // 
             // toolStripTextBox2
             // 
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 27);
             this.toolStripTextBox2.TextChanged += new System.EventHandler(this.toolStripTextBox2_TextChanged);
@@ -303,19 +303,34 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Lime;
+            this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(514, 528);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(195, 48);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "BACK <--";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1226, 650);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bindingNavigator2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridViewBooks);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "BooksForm";
-            this.Text = "BooksForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Books";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BooksForm_FormClosing);
             this.Load += new System.EventHandler(this.BooksForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
@@ -360,5 +375,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Button button3;
     }
 }

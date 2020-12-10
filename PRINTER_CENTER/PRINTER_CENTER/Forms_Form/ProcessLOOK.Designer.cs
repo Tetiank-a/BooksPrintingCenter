@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewProcess = new System.Windows.Forms.DataGridView();
+            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeNeededDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.processTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.ProcessTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dELETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeNeededDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.processBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -57,7 +58,7 @@
             this.bookIdDataGridViewTextBoxColumn,
             this.timeNeededDataGridViewTextBoxColumn});
             this.dataGridViewProcess.DataSource = this.processBindingSource;
-            this.dataGridViewProcess.Location = new System.Drawing.Point(70, 66);
+            this.dataGridViewProcess.Location = new System.Drawing.Point(35, 55);
             this.dataGridViewProcess.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewProcess.MultiSelect = false;
             this.dataGridViewProcess.Name = "dataGridViewProcess";
@@ -67,38 +68,6 @@
             this.dataGridViewProcess.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProcess.Size = new System.Drawing.Size(877, 380);
             this.dataGridViewProcess.TabIndex = 0;
-            // 
-            // processBindingSource
-            // 
-            this.processBindingSource.DataMember = "Process";
-            this.processBindingSource.DataSource = this.printingDataSet;
-            // 
-            // printingDataSet
-            // 
-            this.printingDataSet.DataSetName = "PrintingDataSet";
-            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // processTableAdapter
-            // 
-            this.processTableAdapter.ClearBeforeFill = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dELETEToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dELETEToolStripMenuItem
-            // 
-            this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.dELETEToolStripMenuItem.Text = "DELETE";
-            this.dELETEToolStripMenuItem.Click += new System.EventHandler(this.dELETEToolStripMenuItem_Click);
             // 
             // processIdDataGridViewTextBoxColumn
             // 
@@ -132,19 +101,68 @@
             this.timeNeededDataGridViewTextBoxColumn.Name = "timeNeededDataGridViewTextBoxColumn";
             this.timeNeededDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // processBindingSource
+            // 
+            this.processBindingSource.DataMember = "Process";
+            this.processBindingSource.DataSource = this.printingDataSet;
+            // 
+            // printingDataSet
+            // 
+            this.printingDataSet.DataSetName = "PrintingDataSet";
+            this.printingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // processTableAdapter
+            // 
+            this.processTableAdapter.ClearBeforeFill = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dELETEToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(943, 28);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dELETEToolStripMenuItem
+            // 
+            this.dELETEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dELETEToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
+            this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.dELETEToolStripMenuItem.Text = "DELETE X";
+            this.dELETEToolStripMenuItem.Click += new System.EventHandler(this.dELETEToolStripMenuItem_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Lime;
+            this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(362, 457);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(195, 48);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "BACK <--";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ProcessLOOK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Brown;
-            this.ClientSize = new System.Drawing.Size(1012, 486);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(943, 537);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridViewProcess);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProcessLOOK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProcessLOOK";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProcessLOOK_FormClosing);
             this.Load += new System.EventHandler(this.ProcessLOOK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.processBindingSource)).EndInit();
@@ -168,5 +186,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn printerIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeNeededDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }

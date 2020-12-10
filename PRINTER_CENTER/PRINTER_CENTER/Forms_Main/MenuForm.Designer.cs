@@ -38,13 +38,14 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(354, 88);
+            this.button1.Location = new System.Drawing.Point(26, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 38);
             this.button1.TabIndex = 1;
@@ -54,9 +55,9 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(354, 141);
+            this.button2.Location = new System.Drawing.Point(26, 163);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(190, 38);
             this.button2.TabIndex = 2;
@@ -66,9 +67,9 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(354, 194);
+            this.button3.Location = new System.Drawing.Point(26, 207);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(190, 38);
             this.button3.TabIndex = 3;
@@ -78,9 +79,9 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(354, 300);
+            this.button4.Location = new System.Drawing.Point(26, 296);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(190, 38);
             this.button4.TabIndex = 4;
@@ -90,9 +91,9 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button5.BackColor = System.Drawing.Color.Orange;
             this.button5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(354, 353);
+            this.button5.Location = new System.Drawing.Point(26, 340);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(190, 38);
             this.button5.TabIndex = 5;
@@ -102,9 +103,9 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button6.BackColor = System.Drawing.Color.Orange;
             this.button6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(354, 406);
+            this.button6.Location = new System.Drawing.Point(26, 472);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(190, 38);
             this.button6.TabIndex = 6;
@@ -114,9 +115,9 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button7.BackColor = System.Drawing.Color.Orange;
             this.button7.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(354, 459);
+            this.button7.Location = new System.Drawing.Point(26, 516);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(190, 38);
             this.button7.TabIndex = 7;
@@ -126,21 +127,21 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button8.BackColor = System.Drawing.Color.Coral;
             this.button8.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(354, 512);
+            this.button8.Location = new System.Drawing.Point(263, 163);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(190, 38);
             this.button8.TabIndex = 8;
-            this.button8.Text = "Query Edit";
+            this.button8.Text = "Query";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button9.BackColor = System.Drawing.Color.Orange;
             this.button9.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(354, 247);
+            this.button9.Location = new System.Drawing.Point(26, 384);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(190, 38);
             this.button9.TabIndex = 9;
@@ -150,22 +151,34 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button10.BackColor = System.Drawing.Color.Coral;
             this.button10.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(12, 12);
+            this.button10.Location = new System.Drawing.Point(263, 119);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(190, 38);
             this.button10.TabIndex = 10;
-            this.button10.Text = "Ask data";
+            this.button10.Text = "Statistics";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(150, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 36);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "  MENU  ";
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(942, 601);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(480, 596);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -177,8 +190,12 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +211,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label1;
     }
 }

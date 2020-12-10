@@ -69,6 +69,18 @@ namespace PRINTER_CENTER.Forms_Main
             }
         }
 
+        private void Auto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
+
         public Auto()
         {
             InitializeComponent();

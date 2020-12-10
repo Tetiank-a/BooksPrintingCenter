@@ -216,5 +216,17 @@ namespace PRINTER_CENTER
             dataGridViewPaper.DataSource = dt;
             sqlconn.Close();
         }
+
+        private void PaperForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var x = new MenuForm();
+            x.Show();
+        }
     }
 }

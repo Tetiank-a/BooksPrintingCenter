@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(30, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 33);
@@ -99,6 +99,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Receipt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receipt";
             this.Load += new System.EventHandler(this.Receipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

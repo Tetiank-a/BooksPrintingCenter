@@ -35,6 +35,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewPrinters = new System.Windows.Forms.DataGridView();
             this.printerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paperSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,7 @@
             this.printingMachinesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.printingMachinesTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PrintingMachinesTableAdapter();
-            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrinters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingMachinesBindingSource)).BeginInit();
@@ -100,6 +101,13 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // getProcessesToolStripMenuItem
+            // 
+            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
+            this.getProcessesToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.getProcessesToolStripMenuItem.Text = "Get processes";
+            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
             // 
             // dataGridViewPrinters
             // 
@@ -169,25 +177,33 @@
             // 
             this.printingMachinesTableAdapter.ClearBeforeFill = true;
             // 
-            // getProcessesToolStripMenuItem
+            // button3
             // 
-            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
-            this.getProcessesToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
-            this.getProcessesToolStripMenuItem.Text = "Get processes";
-            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
+            this.button3.BackColor = System.Drawing.Color.Lime;
+            this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(307, 426);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(195, 48);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "BACK <--";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // PrintersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(846, 460);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(846, 496);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridViewPrinters);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PrintersForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintersForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrintersForm_FormClosing);
             this.Load += new System.EventHandler(this.PrintersForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -216,5 +232,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn speedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn conditionDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
+        private System.Windows.Forms.Button button3;
     }
 }

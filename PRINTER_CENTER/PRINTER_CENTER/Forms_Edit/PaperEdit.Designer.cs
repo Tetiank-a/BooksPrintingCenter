@@ -46,11 +46,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button2.BackColor = System.Drawing.Color.Tomato;
             this.button2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(466, 375);
+            this.button2.Location = new System.Drawing.Point(190, 237);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 38);
+            this.button2.Size = new System.Drawing.Size(99, 38);
             this.button2.TabIndex = 19;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
@@ -58,11 +58,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
             this.button1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(192, 375);
+            this.button1.Location = new System.Drawing.Point(56, 237);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 38);
+            this.button1.Size = new System.Drawing.Size(99, 38);
             this.button1.TabIndex = 18;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -71,7 +71,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(360, 225);
+            this.textBox3.Location = new System.Drawing.Point(138, 152);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(180, 34);
             this.textBox3.TabIndex = 16;
@@ -79,7 +79,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(360, 170);
+            this.textBox2.Location = new System.Drawing.Point(138, 97);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(180, 34);
             this.textBox2.TabIndex = 15;
@@ -87,7 +87,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(360, 115);
+            this.textBox1.Location = new System.Drawing.Point(138, 42);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 34);
             this.textBox1.TabIndex = 14;
@@ -97,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(187, 227);
+            this.label3.Location = new System.Drawing.Point(29, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 28);
             this.label3.TabIndex = 12;
@@ -108,7 +108,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(187, 172);
+            this.label2.Location = new System.Drawing.Point(29, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 28);
             this.label2.TabIndex = 11;
@@ -119,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(187, 117);
+            this.label1.Location = new System.Drawing.Point(29, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 28);
             this.label1.TabIndex = 10;
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(865, 522);
+            this.ClientSize = new System.Drawing.Size(368, 340);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
@@ -154,6 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PaperEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaperEdit";
             this.Load += new System.EventHandler(this.PaperEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();

@@ -19,8 +19,16 @@ namespace PRINTER_CENTER
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var x = new MenuForm();
-            x.Show();
+            if (textBox1.Text == "root" && textBox2.Text == "123")
+            {
+                this.Hide();
+                var x = new MenuForm();
+                x.Show();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password or login", "Failed to login", MessageBoxButtons.OK);
+            }
         }
     }
 }
