@@ -97,5 +97,10 @@ namespace PRINTER_CENTER
         {
             Application.Exit();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click button to see a choosen infornation", "Help", MessageBoxButtons.OK);
+        }
     }
 }

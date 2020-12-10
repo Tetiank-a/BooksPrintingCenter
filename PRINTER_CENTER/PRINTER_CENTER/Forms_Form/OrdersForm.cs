@@ -217,5 +217,10 @@ namespace PRINTER_CENTER
             var x = new MenuForm();
             x.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Press button FIND PRINTER after choosing an item to make system automatically distridute this order on printers. To create a receipt press ORDER RECEIPT", "Help", MessageBoxButtons.OK);
+        }
     }
 }

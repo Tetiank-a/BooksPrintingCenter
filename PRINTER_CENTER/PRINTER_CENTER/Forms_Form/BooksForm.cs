@@ -98,5 +98,10 @@ namespace PRINTER_CENTER.Forms_Form
             var x = new MenuForm();
             x.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Choose an item and do any action in the menu", "Help", MessageBoxButtons.OK);
+        }
     }
 }

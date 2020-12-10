@@ -81,6 +81,11 @@ namespace PRINTER_CENTER.Forms_Main
             x.Show();
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Press FIND PRINTERS button to make system automaticaly distribute books on machines for printing", "Help", MessageBoxButtons.OK);
+        }
+
         public Auto()
         {
             InitializeComponent();
