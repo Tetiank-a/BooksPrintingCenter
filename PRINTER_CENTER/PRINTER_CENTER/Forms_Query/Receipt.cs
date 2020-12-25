@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
+using System.Reflection;
 
 namespace PRINTER_CENTER.Forms_Query
 {
@@ -23,7 +25,6 @@ namespace PRINTER_CENTER.Forms_Query
         }
         public Receipt(int OrderId) : this()
         {
-
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             string s = String.Format("select c1.c_name, c1.c_surname, o1.orderdate, b1.bookname," +
@@ -74,20 +75,15 @@ namespace PRINTER_CENTER.Forms_Query
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Word.Application objWord = new Word.Application();
+            objWord.Visible = true;
+            objWord.WindowState = Word.WdWindowState.wdWindowStateNormal;
 
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            Word.Document objDoc = objWord.Documents.Add();
 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName.ToString());
-                file.WriteLine(Receiptx);
-                file.Close();
-            }
-
+            Word.Paragraph objPara;
+            objPara = objDoc.Paragraphs.Add();
+            objPara.Range.Text = Receiptx;
         }
     }
 }

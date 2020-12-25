@@ -43,3 +43,4 @@ C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTE
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Query.Process.resources
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Query.AskData.resources
 C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.Forms_Main.Auto.resources
+C:\Users\tatyr\Documents\GitHub\BooksPrintingCenter\PRINTER_CENTER\PRINTER_CENTER\obj\Debug\PRINTER_CENTER.csproj.ResolveComReference.cache

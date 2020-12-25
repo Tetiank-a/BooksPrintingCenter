@@ -101,7 +101,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Lime;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button5.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(388, 603);
             this.button5.Name = "button5";

@@ -52,13 +52,13 @@
             this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.button3 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -85,7 +85,7 @@
             this.numberOfPagesDataGridViewTextBoxColumn,
             this.amountOfInkDataGridViewTextBoxColumn});
             this.dataGridViewBooks.DataSource = this.booksBindingSource;
-            this.dataGridViewBooks.Location = new System.Drawing.Point(25, 133);
+            this.dataGridViewBooks.Location = new System.Drawing.Point(23, 181);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.RowHeadersWidth = 51;
             this.dataGridViewBooks.RowTemplate.Height = 24;
@@ -195,7 +195,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // editToolStripMenuItem
@@ -205,7 +205,7 @@
             this.editToolStripMenuItem1,
             this.deleteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
@@ -235,7 +235,7 @@
             this.byNameToolStripMenuItem,
             this.byIdToolStripMenuItem});
             this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
-            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(50, 26);
             this.sortToolStripMenuItem.Text = "Sort";
             // 
             // byNameToolStripMenuItem
@@ -252,17 +252,6 @@
             this.byIdToolStripMenuItem.Text = "By id";
             this.byIdToolStripMenuItem.Click += new System.EventHandler(this.byIdToolStripMenuItem_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MistyRose;
-            this.label4.Location = new System.Drawing.Point(525, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 33);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "SEARCHING";
-            // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = null;
@@ -276,7 +265,7 @@
             this.toolStripLabel2,
             this.toolStripTextBox2,
             this.toolStripSeparator4});
-            this.bindingNavigator2.Location = new System.Drawing.Point(25, 93);
+            this.bindingNavigator2.Location = new System.Drawing.Point(23, 130);
             this.bindingNavigator2.MoveFirstItem = null;
             this.bindingNavigator2.MoveLastItem = null;
             this.bindingNavigator2.MoveNextItem = null;
@@ -290,26 +279,25 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(109, 24);
+            this.toolStripLabel2.Size = new System.Drawing.Size(109, 28);
             this.toolStripLabel2.Text = "FIND BOOK";
             // 
             // toolStripTextBox2
             // 
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 31);
             this.toolStripTextBox2.TextChanged += new System.EventHandler(this.toolStripTextBox2_TextChanged);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(514, 528);
+            this.button3.Location = new System.Drawing.Point(512, 576);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 25;
@@ -330,15 +318,26 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MistyRose;
+            this.label1.Location = new System.Drawing.Point(524, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 38);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "BOOKS";
+            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1226, 650);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.bindingNavigator2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridViewBooks);
@@ -386,12 +385,12 @@
         private System.Windows.Forms.ToolStripMenuItem sortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byIdToolStripMenuItem;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingNavigator bindingNavigator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label1;
     }
 }

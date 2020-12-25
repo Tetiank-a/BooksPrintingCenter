@@ -40,6 +40,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dELETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.processBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -58,7 +59,7 @@
             this.bookIdDataGridViewTextBoxColumn,
             this.timeNeededDataGridViewTextBoxColumn});
             this.dataGridViewProcess.DataSource = this.processBindingSource;
-            this.dataGridViewProcess.Location = new System.Drawing.Point(35, 55);
+            this.dataGridViewProcess.Location = new System.Drawing.Point(24, 119);
             this.dataGridViewProcess.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewProcess.MultiSelect = false;
             this.dataGridViewProcess.Name = "dataGridViewProcess";
@@ -122,7 +123,7 @@
             this.dELETEToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(943, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(932, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,7 +132,7 @@
             this.dELETEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dELETEToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.dELETEToolStripMenuItem.Text = "DELETE X";
             this.dELETEToolStripMenuItem.Click += new System.EventHandler(this.dELETEToolStripMenuItem_Click);
             // 
@@ -139,7 +140,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(362, 457);
+            this.button3.Location = new System.Drawing.Point(351, 521);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 26;
@@ -147,12 +148,24 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MistyRose;
+            this.label5.Location = new System.Drawing.Point(344, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 38);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "PROCESSES";
+            // 
             // ProcessLOOK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(943, 537);
+            this.ClientSize = new System.Drawing.Size(932, 605);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridViewProcess);
             this.Controls.Add(this.menuStrip1);
@@ -187,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeNeededDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
     }
 }

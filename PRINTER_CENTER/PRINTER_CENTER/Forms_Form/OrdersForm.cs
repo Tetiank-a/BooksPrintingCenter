@@ -147,7 +147,10 @@ namespace PRINTER_CENTER
             DateTime x2 = Convert.ToDateTime(dateTimePicker2.Value);
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
-            string s = String.Format("select * from orders where orders.orderdate >= '{0}' and orders.orderdate <= '{1}'", x1, x2);
+            bool xxx = false;
+            if (checkBox1.Checked == true)
+                xxx = true;
+            string s = String.Format("select * from orders where orders.orderdate >= '{0}' and orders.orderdate <= '{1}' and orders.condition = '{2}'", x1, x2, xxx);
             SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
             DataTable dt = new DataTable();
             oda.Fill(dt);

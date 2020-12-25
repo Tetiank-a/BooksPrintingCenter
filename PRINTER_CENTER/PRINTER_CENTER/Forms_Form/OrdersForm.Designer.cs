@@ -59,14 +59,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -91,7 +92,7 @@
             this.conditionDataGridViewCheckBoxColumn});
             this.dataGridViewOrders.DataSource = this.ordersBindingSource;
             this.dataGridViewOrders.GridColor = System.Drawing.Color.Silver;
-            this.dataGridViewOrders.Location = new System.Drawing.Point(34, 267);
+            this.dataGridViewOrders.Location = new System.Drawing.Point(32, 292);
             this.dataGridViewOrders.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridViewOrders.MultiSelect = false;
             this.dataGridViewOrders.Name = "dataGridViewOrders";
@@ -263,14 +264,14 @@
             this.toolStripLabel4,
             this.toolStripTextBox4,
             this.toolStripSeparator1});
-            this.bindingNavigator3.Location = new System.Drawing.Point(52, 118);
+            this.bindingNavigator3.Location = new System.Drawing.Point(50, 127);
             this.bindingNavigator3.MoveFirstItem = null;
             this.bindingNavigator3.MoveLastItem = null;
             this.bindingNavigator3.MoveNextItem = null;
             this.bindingNavigator3.MovePreviousItem = null;
             this.bindingNavigator3.Name = "bindingNavigator3";
             this.bindingNavigator3.PositionItem = null;
-            this.bindingNavigator3.Size = new System.Drawing.Size(274, 31);
+            this.bindingNavigator3.Size = new System.Drawing.Size(274, 27);
             this.bindingNavigator3.TabIndex = 5;
             this.bindingNavigator3.Text = "bindingNavigator3";
             // 
@@ -295,7 +296,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(197, 182);
+            this.dateTimePicker1.Location = new System.Drawing.Point(195, 207);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(369, 31);
             this.dateTimePicker1.TabIndex = 6;
@@ -303,7 +304,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(197, 219);
+            this.dateTimePicker2.Location = new System.Drawing.Point(195, 244);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(369, 31);
             this.dateTimePicker2.TabIndex = 7;
@@ -311,7 +312,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.Location = new System.Drawing.Point(600, 212);
+            this.button1.Location = new System.Drawing.Point(598, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 37);
             this.button1.TabIndex = 8;
@@ -323,7 +324,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(47, 186);
+            this.label1.Location = new System.Drawing.Point(45, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 9;
@@ -333,7 +334,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(47, 221);
+            this.label2.Location = new System.Drawing.Point(45, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 28);
             this.label2.TabIndex = 10;
@@ -342,24 +343,13 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Coral;
-            this.button2.Location = new System.Drawing.Point(785, 212);
+            this.button2.Location = new System.Drawing.Point(783, 237);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 37);
             this.button2.TabIndex = 11;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MistyRose;
-            this.label3.Location = new System.Drawing.Point(471, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 33);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "FILTERING";
             // 
             // toolStripLabel1
             // 
@@ -392,33 +382,22 @@
             this.toolStripLabel1,
             this.toolStripTextBox1,
             this.toolStripSeparator2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(52, 76);
+            this.bindingNavigator1.Location = new System.Drawing.Point(50, 85);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(274, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(274, 27);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MistyRose;
-            this.label4.Location = new System.Drawing.Point(471, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 33);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "SEARCHING";
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(426, 619);
+            this.button3.Location = new System.Drawing.Point(408, 644);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 26;
@@ -431,7 +410,7 @@
             this.button11.BackColor = System.Drawing.Color.White;
             this.button11.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.button11.Location = new System.Drawing.Point(961, 48);
+            this.button11.Location = new System.Drawing.Point(961, 45);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(51, 38);
             this.button11.TabIndex = 27;
@@ -439,16 +418,49 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MistyRose;
+            this.label5.Location = new System.Drawing.Point(417, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 38);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "ORDERS";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(45, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 28);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Condition";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBox1.Location = new System.Drawing.Point(195, 169);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 32);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "Done";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(1024, 679);
+            this.ClientSize = new System.Drawing.Size(1024, 714);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -511,16 +523,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem orederReceiptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findPrinterToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

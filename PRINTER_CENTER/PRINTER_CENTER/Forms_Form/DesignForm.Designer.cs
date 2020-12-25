@@ -43,6 +43,7 @@
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.designTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.DesignTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designBindingSource)).BeginInit();
@@ -110,7 +111,7 @@
             this.designNameDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dataGridViewDesign.DataSource = this.designBindingSource;
-            this.dataGridViewDesign.Location = new System.Drawing.Point(35, 66);
+            this.dataGridViewDesign.Location = new System.Drawing.Point(35, 95);
             this.dataGridViewDesign.MultiSelect = false;
             this.dataGridViewDesign.Name = "dataGridViewDesign";
             this.dataGridViewDesign.RowHeadersWidth = 51;
@@ -159,7 +160,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(323, 480);
+            this.button3.Location = new System.Drawing.Point(323, 501);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 26;
@@ -167,12 +168,24 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MistyRose;
+            this.label5.Location = new System.Drawing.Point(354, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 38);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "DESIGN";
+            // 
             // DesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(870, 551);
+            this.ClientSize = new System.Drawing.Size(870, 561);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridViewDesign);
             this.Controls.Add(this.menuStrip1);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn designNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
     }
 }

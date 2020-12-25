@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
+using System.Reflection;
 
 namespace PRINTER_CENTER.Forms_Query
 {
@@ -54,18 +56,15 @@ namespace PRINTER_CENTER.Forms_Query
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            Word.Application objWord = new Word.Application();
+            objWord.Visible = true;
+            objWord.WindowState = Word.WdWindowState.wdWindowStateNormal;
 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
+            Word.Document objDoc = objWord.Documents.Add();
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName.ToString());
-                file.WriteLine(Receiptx);
-                file.Close();
-            }
+            Word.Paragraph objPara;
+            objPara = objDoc.Paragraphs.Add();
+            objPara.Range.Text = Receiptx;
         }
     }
 }

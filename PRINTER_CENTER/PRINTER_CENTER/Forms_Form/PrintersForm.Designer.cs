@@ -45,6 +45,7 @@
             this.printingDataSet = new PRINTER_CENTER.PrintingDataSet();
             this.printingMachinesTableAdapter = new PRINTER_CENTER.PrintingDataSetTableAdapters.PrintingMachinesTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrinters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingMachinesBindingSource)).BeginInit();
@@ -120,7 +121,7 @@
             this.speedDataGridViewTextBoxColumn,
             this.conditionDataGridViewCheckBoxColumn});
             this.dataGridViewPrinters.DataSource = this.printingMachinesBindingSource;
-            this.dataGridViewPrinters.Location = new System.Drawing.Point(35, 60);
+            this.dataGridViewPrinters.Location = new System.Drawing.Point(36, 116);
             this.dataGridViewPrinters.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPrinters.MultiSelect = false;
             this.dataGridViewPrinters.Name = "dataGridViewPrinters";
@@ -181,7 +182,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(307, 426);
+            this.button3.Location = new System.Drawing.Point(308, 482);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 26;
@@ -189,12 +190,24 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MistyRose;
+            this.label5.Location = new System.Drawing.Point(322, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(161, 38);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "PRINTERS";
+            // 
             // PrintersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(846, 496);
+            this.ClientSize = new System.Drawing.Size(846, 557);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridViewPrinters);
             this.Controls.Add(this.menuStrip1);
@@ -233,5 +246,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn conditionDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
     }
 }
