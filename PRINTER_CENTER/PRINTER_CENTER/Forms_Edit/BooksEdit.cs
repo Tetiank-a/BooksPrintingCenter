@@ -58,17 +58,13 @@ namespace PRINTER_CENTER.Forms_Edit
         }
         bool CheckIfNumber(string s)
         {
-            if (s == "") return false;
-            int k1 = 0;
+            if (s == "" || s[0] == '0')
+                return false;
             for (int i = 0; i < s.Length; ++i)
             {
-                if ((s[i] > '9' || s[i] < '0') && (s[i] != '.'))
+                if (s[i] > '9' || s[i] < '0')
                     return false;
-                if (s[i] == '.')
-                    k1++;
             }
-            if (k1 > 0)
-                return false;
             return true;
         }
         bool Check_valid(string s)

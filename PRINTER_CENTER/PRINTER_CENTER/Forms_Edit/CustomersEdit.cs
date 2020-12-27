@@ -43,10 +43,21 @@ namespace PRINTER_CENTER
                 return false;
             return true;
         }
+        bool CheckIfNumber(string s)
+        {
+            if (s == "")
+                return false;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if (s[i] > '9' || s[i] < '0')
+                    return false;
+            }
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (Check_valid(textBox1.Text) == false || Check_valid(textBox2.Text) == false ||
-                Check_valid(textBox3.Text) == false || Check_valid(textBox4.Text) == false)
+                Check_valid(textBox3.Text) == false || Check_valid(textBox4.Text) == false || CheckIfNumber(textBox3.Text) == false)
             {
                 MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
             }

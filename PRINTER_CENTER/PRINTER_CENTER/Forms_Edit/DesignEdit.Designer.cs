@@ -71,7 +71,7 @@
             this.textBox3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(146, 125);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 34);
+            this.textBox3.Size = new System.Drawing.Size(204, 34);
             this.textBox3.TabIndex = 31;
             // 
             // textBox1
@@ -79,7 +79,7 @@
             this.textBox1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(146, 58);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 34);
+            this.textBox1.Size = new System.Drawing.Size(204, 34);
             this.textBox1.TabIndex = 30;
             // 
             // label3

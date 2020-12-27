@@ -6864,15 +6864,15 @@ SELECT DesignId, DesignName, Price FROM Design WHERE (DesignId = @DesignId)";
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT DesignId, DesignName, Price FROM dbo.Design WHERE ([DesignId] = @Original_" +
-                "DesignId)";
+                "DesignId);";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DesignId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DesignId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "UPDATE [dbo].[Design] SET [DesignName] = @DesignName, [Price] = @Price WHERE ([De" +
-                "signId] = @Original_DesignId)";
+                "signId] = @Original_DesignId);";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DesignName", global::System.Data.SqlDbType.Char, 50, global::System.Data.ParameterDirection.Input, 0, 0, "DesignName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DesignName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "DesignName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DesignId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DesignId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -7117,7 +7117,7 @@ SELECT DesignId, DesignName, Price FROM Design WHERE (DesignId = @DesignId)";
         public virtual int UpdateQuery(string DesignName, global::System.Nullable<decimal> Price, int Original_DesignId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((DesignName == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("DesignName");
             }
             else {
                 command.Parameters[0].Value = ((string)(DesignName));

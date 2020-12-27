@@ -25,7 +25,17 @@ namespace PRINTER_CENTER.Forms_Edit
         public DesignEdit(int DesignId, string DesignName, SqlMoney Price) : this()
         {
             this.designTableAdapter.Fill(this.printingDataSet.Design);
-            textBox1.Text = DesignName;
+            int i = DesignName.Length - 1;
+            while (DesignName[i] == ' ')
+            {
+                if (i <= 0)
+                    break;
+                --i;
+            }
+            string sss = "";
+            for (int j = 0; j <= i; ++j)
+                sss += DesignName[j];
+            textBox1.Text = sss;
             textBox3.Text = Price.ToString();
             this.edit = true;
             this.id = DesignId;
@@ -41,21 +51,48 @@ namespace PRINTER_CENTER.Forms_Edit
                 return false;
             return true;
         }
+        bool CheckIfNumber(string s)
+        {
+            int k1 = 0;
+            if (s == "" || s[0] == '.' || s[s.Length - 1] == '.')
+                return false;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if ((s[i] > '9' || s[i] < '0') && (s[i] != '.'))
+                    return false;
+                if (s[i] == '.')
+                    k1++;
+            }
+            if (k1 > 1)
+                return false;
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Check_valid(textBox1.Text) == false || Check_valid(textBox3.Text) == false)
+            if (Check_valid(textBox1.Text) == false || Check_valid(textBox3.Text) == false || CheckIfNumber(textBox3.Text) == false)
             {
-                MessageBox.Show("Not all fields are filled", "Invalid data", MessageBoxButtons.OK);
+                MessageBox.Show("Not all fields are filled or invalid data is entered", "Invalid data", MessageBoxButtons.OK);
             }
             else
             {
+                string d = textBox1.Text;
+                int i = d.Length - 1;
+                while (d[i] == ' ')
+                {
+                    if (i <= 0)
+                        break;
+                    --i;
+                }
+                string sss = "";
+                for (int j = 0; j <= i; ++j)
+                    sss += d[j];
                 if (edit)
                 {
-                    designTableAdapter.UpdateQuery(textBox1.Text, Convert.ToDecimal(textBox3.Text), id);
+                    designTableAdapter.UpdateQuery(d, Convert.ToDecimal(textBox3.Text), id);
                 }
                 else
                 {
-                    designTableAdapter.Insert(textBox1.Text, Convert.ToDecimal(textBox3.Text));
+                    designTableAdapter.Insert(d, Convert.ToDecimal(textBox3.Text));
                 }
                 Close();
             }
