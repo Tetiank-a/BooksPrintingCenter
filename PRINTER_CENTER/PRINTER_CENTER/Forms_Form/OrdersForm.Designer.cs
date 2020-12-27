@@ -68,6 +68,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.sorted = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingDataSet)).BeginInit();
@@ -92,7 +96,7 @@
             this.conditionDataGridViewCheckBoxColumn});
             this.dataGridViewOrders.DataSource = this.ordersBindingSource;
             this.dataGridViewOrders.GridColor = System.Drawing.Color.Silver;
-            this.dataGridViewOrders.Location = new System.Drawing.Point(32, 292);
+            this.dataGridViewOrders.Location = new System.Drawing.Point(32, 360);
             this.dataGridViewOrders.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridViewOrders.MultiSelect = false;
             this.dataGridViewOrders.Name = "dataGridViewOrders";
@@ -100,7 +104,7 @@
             this.dataGridViewOrders.RowHeadersWidth = 51;
             this.dataGridViewOrders.RowTemplate.Height = 24;
             this.dataGridViewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(958, 344);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(958, 312);
             this.dataGridViewOrders.TabIndex = 0;
             // 
             // orderIdDataGridViewTextBoxColumn
@@ -219,14 +223,14 @@
             // byDateToolStripMenuItem
             // 
             this.byDateToolStripMenuItem.Name = "byDateToolStripMenuItem";
-            this.byDateToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.byDateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.byDateToolStripMenuItem.Text = "By date";
             this.byDateToolStripMenuItem.Click += new System.EventHandler(this.byDateToolStripMenuItem_Click);
             // 
             // byOrderIdToolStripMenuItem
             // 
             this.byOrderIdToolStripMenuItem.Name = "byOrderIdToolStripMenuItem";
-            this.byOrderIdToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.byOrderIdToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.byOrderIdToolStripMenuItem.Text = "By order id";
             this.byOrderIdToolStripMenuItem.Click += new System.EventHandler(this.byOrderIdToolStripMenuItem_Click);
             // 
@@ -296,7 +300,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 207);
+            this.dateTimePicker1.Location = new System.Drawing.Point(195, 209);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(369, 31);
             this.dateTimePicker1.TabIndex = 6;
@@ -304,7 +308,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(195, 244);
+            this.dateTimePicker2.Location = new System.Drawing.Point(195, 248);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(369, 31);
             this.dateTimePicker2.TabIndex = 7;
@@ -312,7 +316,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.Location = new System.Drawing.Point(598, 237);
+            this.button1.Location = new System.Drawing.Point(332, 302);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 37);
             this.button1.TabIndex = 8;
@@ -324,7 +328,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(45, 212);
+            this.label1.Location = new System.Drawing.Point(45, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 9;
@@ -334,7 +338,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(45, 243);
+            this.label2.Location = new System.Drawing.Point(45, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 28);
             this.label2.TabIndex = 10;
@@ -343,7 +347,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Coral;
-            this.button2.Location = new System.Drawing.Point(783, 237);
+            this.button2.Location = new System.Drawing.Point(539, 302);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 37);
             this.button2.TabIndex = 11;
@@ -397,7 +401,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(148)))), ((int)(((byte)(139)))));
             this.button3.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(408, 644);
+            this.button3.Location = new System.Drawing.Point(403, 680);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 48);
             this.button3.TabIndex = 26;
@@ -450,12 +454,54 @@
             this.checkBox1.Text = "Done";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(633, 180);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(18, 17);
+            this.checkBox2.TabIndex = 31;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(633, 260);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(18, 17);
+            this.checkBox4.TabIndex = 33;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(633, 220);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(18, 17);
+            this.checkBox3.TabIndex = 34;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // sorted
+            // 
+            this.sorted.AutoSize = true;
+            this.sorted.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sorted.ForeColor = System.Drawing.Color.Lime;
+            this.sorted.Location = new System.Drawing.Point(788, 335);
+            this.sorted.Name = "sorted";
+            this.sorted.Size = new System.Drawing.Size(162, 20);
+            this.sorted.TabIndex = 35;
+            this.sorted.Text = "Sorted by OrderId";
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(1024, 714);
+            this.ClientSize = new System.Drawing.Size(1024, 740);
+            this.Controls.Add(this.sorted);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
@@ -535,5 +581,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label sorted;
     }
 }

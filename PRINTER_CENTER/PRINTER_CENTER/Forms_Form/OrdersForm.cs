@@ -17,7 +17,8 @@ namespace PRINTER_CENTER
     {
         const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
         private bool edit = true;
-        //1
+        bool state = false;
+        string sorting = "orders.orderid";
         public OrdersForm()
         {
             InitializeComponent();
@@ -80,87 +81,106 @@ namespace PRINTER_CENTER
                 Convert.ToInt32(dataGridViewOrders.SelectedRows[0].Cells[0].Value)
                 );
                 dataGridViewOrders.DataSource = ordersBindingSource;
-                Ziro();
+                //Ziro();
                 ordersTableAdapter.Fill(printingDataSet.Orders);
                 printingDataSet.AcceptChanges();
             }
+            Filter();
         }
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            string x = toolStripTextBox1.Text;
-            string y = toolStripTextBox4.Text;
-            string s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%'", x, y);
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewOrders.DataSource = dt;
-            sqlconn.Close();
+            Filter();
         }
 
         private void byDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ziro();
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            string s = String.Format("select * from orders order by orders.orderdate");
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewOrders.DataSource = dt;
-            sqlconn.Close();
+            sorted.Text = "Sorted by OrderDate";
+            sorting = "orders.orderdate";
+            Filter();
         }
 
         private void byOrderIdToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ziro();
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            string s = String.Format("select * from orders order by orders.orderid");
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewOrders.DataSource = dt;
-            sqlconn.Close();
+            sorted.Text = "Sorted by OrderId";
+            sorting = "orders.orderid";
+            Filter();
         }
 
         private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            string x = toolStripTextBox1.Text;
-            string y = toolStripTextBox4.Text;
-            string s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%'", x, y);
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewOrders.DataSource = dt;
-            sqlconn.Close();
+            Filter();
         }
+        void Filter()
+        {
+            if (state == true)
+            {
+                bool c1, c2, c3;
+                DateTime x1, x2;
+                c1 = checkBox2.Checked;
+                c2 = checkBox3.Checked;
+                c3 = checkBox4.Checked;
+                if (c2 == false)
+                {
+                    x1 = Convert.ToDateTime("11.11.1000");
+                }
+                else
+                    x1 = Convert.ToDateTime(dateTimePicker1.Value);
+                if (c3 == false)
+                {
+                    x2 = Convert.ToDateTime("11.11.6000");
+                }
+                else
+                    x2 = Convert.ToDateTime(dateTimePicker2.Value);
+                bool xxx = false;
+                if (checkBox1.Checked == true)
+                    xxx = true;
 
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string x = toolStripTextBox1.Text;
+                string y = toolStripTextBox4.Text;
+                string s;
+                if (c1 == true)
+                    s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%' and orders.orderdate >= '{2}' and orders.orderdate <= '{3}' and orders.condition = '{4}' order by {5}", x, y, x1, x2, xxx, sorting);
+                else
+                    s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%' and orders.orderdate >= '{2}' and orders.orderdate <= '{3}' order by {4}", x, y, x1, x2, sorting);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridViewOrders.DataSource = dt;
+                sqlconn.Close();
+            }
+            else
+            {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string x = toolStripTextBox1.Text;
+                string y = toolStripTextBox4.Text;
+                string s = String.Format("select * from orders where orders.customerid like '%{0}%' and orders.orderid like '%{1}%'", x, y);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridViewOrders.DataSource = dt;
+                sqlconn.Close();
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            Ziro();
-            DateTime x1 = Convert.ToDateTime(dateTimePicker1.Value);
-            DateTime x2 = Convert.ToDateTime(dateTimePicker2.Value);
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            bool xxx = false;
-            if (checkBox1.Checked == true)
-                xxx = true;
-            string s = String.Format("select * from orders where orders.orderdate >= '{0}' and orders.orderdate <= '{1}' and orders.condition = '{2}'", x1, x2, xxx);
-            SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridViewOrders.DataSource = dt;
-            sqlconn.Close();
+            state = true;
+            Filter();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Ziro();
+            state = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox1.Checked = false;
+            sorted.Text = "Sorted by OrderId";
+            sorting = "orders.orderid";
             dataGridViewOrders.DataSource = ordersBindingSource;
             ordersTableAdapter.Fill(printingDataSet.Orders);
         }
