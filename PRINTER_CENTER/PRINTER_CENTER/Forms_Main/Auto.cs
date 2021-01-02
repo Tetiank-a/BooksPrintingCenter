@@ -39,8 +39,9 @@ namespace PRINTER_CENTER.Forms_Main
                     if (x == 0)
                     {
                         MessageBox.Show("No appropriate printers", "Invalid data", MessageBoxButtons.OK);
+                        return;
                         break;
-                    }
+                    } 
                     s = String.Format("select * from printings where printings.papersize = '{0}' " +
                     "order by printings.[common time] + printings.speed * {1}", papersizex, booksizex);
                     oda = new SqlDataAdapter(s, sqlconn);
@@ -71,7 +72,7 @@ namespace PRINTER_CENTER.Forms_Main
 
         private void Auto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+           // Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e)

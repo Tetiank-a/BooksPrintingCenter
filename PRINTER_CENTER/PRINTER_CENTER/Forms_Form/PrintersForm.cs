@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace PRINTER_CENTER.Forms_Form
 {
     public partial class PrintersForm : Form
     {
+        const string ConnectionString = @"Data Source=TANIA;Initial Catalog=Printing;Integrated Security=True";
         private bool edit = true;
         public PrintersForm()
         {
@@ -56,7 +58,7 @@ namespace PRINTER_CENTER.Forms_Form
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            /*if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!edit) return;
                 printingMachinesTableAdapter.DeleteQuery(
@@ -64,6 +66,34 @@ namespace PRINTER_CENTER.Forms_Form
                 );
                 printingMachinesTableAdapter.Fill(printingDataSet.PrintingMachines);
                 printingDataSet.AcceptChanges();
+            }*/
+            if (MessageBox.Show("Do you really want to delete this?", "Delete Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                string s = String.Format("select count(process.printerid) from process where process.printerid = {0}",
+                    dataGridViewPrinters.SelectedRows[0].Cells[0].Value);
+                SqlDataAdapter oda = new SqlDataAdapter(s, sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                //dataGridViewInk.DataSource = dt;
+
+                sqlconn.Close();
+                if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+                {
+                    if (!edit) return;
+                    printingMachinesTableAdapter.DeleteQuery(
+                    Convert.ToInt32(dataGridViewPrinters.SelectedRows[0].Cells[0].Value)
+                    );
+                    printingMachinesTableAdapter.Fill(printingDataSet.PrintingMachines);
+                    printingDataSet.AcceptChanges();
+                }
+                else
+                {
+                    MessageBox.Show("This printing machine is used in processes, delete all processes " +
+                        "with this value to delete this item", "Impossible " +
+                        "operation", MessageBoxButtons.OK);
+                }
             }
         }
 
